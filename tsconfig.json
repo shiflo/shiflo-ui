@@ -2,12 +2,17 @@
   "compilerOptions": {
     "module": "esnext",
     "target": "es2019",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "strict": true,
     "noEmit": true,
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@theme/*": ["theme/*"]
+    }
   }
 }
