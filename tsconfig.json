@@ -12,7 +12,10 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["components/*"],
-      "@theme/*": ["theme/*"]
+      "@assets/*": ["assets/*"],
+      "@theme/*": ["theme/*"],
+      "@typings/*": ["typings/*"],
+      "@utils/*": ["utils/*"]
     }
   }
 }
