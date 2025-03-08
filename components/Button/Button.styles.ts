@@ -6,6 +6,7 @@ export const StyledButton = styled.button<ButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: ${({ theme: { spacing } }) => spacing["100"]};
   font-weight: 500;
   transition:
     background-color 0.2s,
