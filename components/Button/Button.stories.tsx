@@ -1,3 +1,5 @@
+import Icon from "@components/Icon";
+
 import Button from "./Button";
 
 import { ButtonProps } from "./Button.typing";
@@ -18,6 +20,12 @@ const meta: Meta<typeof Button> = {
     color: {
       control: "radio",
       options: ["primary", "secondary"]
+    },
+    startIcon: {
+      control: false
+    },
+    endIcon: {
+      control: false
     }
   }
 } satisfies Meta<ButtonProps>;
@@ -32,5 +40,37 @@ export const Default: Story = {
     size: "medium",
     color: "primary",
     disabled: false
+  }
+};
+
+export const WithStartIcon: Story = {
+  args: {
+    children: "Button",
+    variant: "filled",
+    size: "medium",
+    color: "primary",
+    disabled: false,
+    startIcon: <Icon name={"CalendarsSolid"} />
+  }
+};
+
+export const WithEndIcon: Story = {
+  args: {
+    children: "Button",
+    variant: "filled",
+    size: "medium",
+    color: "primary",
+    disabled: false,
+    endIcon: <Icon name={"CalendarsSolid"} />
+  }
+};
+
+export const IconOnly: Story = {
+  args: {
+    variant: "filled",
+    size: "medium",
+    color: "primary",
+    disabled: false,
+    startIcon: <Icon name={"CalendarsSolid"} />
   }
 };

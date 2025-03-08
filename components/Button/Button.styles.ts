@@ -125,7 +125,11 @@ export const StyledButton = styled.button<ButtonProps>`
           padding: `${spacing["300"]} ${spacing["350"]}`,
           borderRadius: radius["300"],
           fontSize: body1.fontSize,
-          lineHeight: body1.lineHeight
+          lineHeight: body1.lineHeight,
+          "& svg": {
+            width: body1.fontSize,
+            height: body1.fontSize
+          }
         });
         break;
       case "small":
@@ -133,7 +137,11 @@ export const StyledButton = styled.button<ButtonProps>`
           padding: `${spacing["100"]} ${spacing["150"]}`,
           borderRadius: radius["200"],
           fontSize: small1.fontSize,
-          lineHeight: small1.lineHeight
+          lineHeight: small1.lineHeight,
+          "& svg": {
+            width: small1.fontSize,
+            height: small1.fontSize
+          }
         });
         break;
       case "xSmall":
@@ -141,7 +149,11 @@ export const StyledButton = styled.button<ButtonProps>`
           padding: `${spacing["50"]} ${spacing["100"]}`,
           borderRadius: radius["150"],
           fontSize: small2.fontSize,
-          lineHeight: small2.lineHeight
+          lineHeight: small2.lineHeight,
+          "& svg": {
+            width: small2.fontSize,
+            height: small2.fontSize
+          }
         });
         break;
       default:
@@ -149,7 +161,11 @@ export const StyledButton = styled.button<ButtonProps>`
           padding: `${spacing["200"]} ${spacing["250"]}`,
           borderRadius: radius["250"],
           fontSize: body2.fontSize,
-          lineHeight: body2.lineHeight
+          lineHeight: body2.lineHeight,
+          "& svg": {
+            width: body2.fontSize,
+            height: body2.fontSize
+          }
         });
         break;
     }

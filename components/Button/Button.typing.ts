@@ -1,7 +1,9 @@
-import { ButtonHTMLAttributes } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
 export interface BaseButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "xSmall" | "small" | "medium" | "large";
+  startIcon?: ReactNode;
+  endIcon?: ReactNode;
 }
 
 export interface FilledButtonProps extends BaseButtonProps {
