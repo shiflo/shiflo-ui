@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es2019",
+    "moduleResolution": "node",
+    "strict": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true
+  }
+}
