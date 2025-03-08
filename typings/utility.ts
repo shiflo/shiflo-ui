@@ -1,3 +1,9 @@
+import type { css } from "basic-styled";
+
+export interface ComponentProps {
+  css?: ReturnType<typeof css>;
+}
+
 export type RecursionPath<T, Prefix extends string = ""> = Exclude<
   {
     [K in keyof T & (string | number)]: T[K] extends object

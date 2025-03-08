@@ -11,6 +11,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
     color = "primary",
     startIcon,
     endIcon,
+    css,
     ...props
   },
   ref
