@@ -61,7 +61,7 @@ export const StyledButton = styled.button<ButtonProps>`
             backgroundColor: neutral["200"]
           },
           "&:active": {
-            transform: "scale(0.95)",
+            transform: "scale(0.9)",
             backgroundColor: neutral["300"]
           },
           "&:disabled": {
