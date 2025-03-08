@@ -14,4 +14,9 @@ export interface GhostButtonProps extends BaseButtonProps {
   color?: "primary";
 }
 
-export type ButtonProps = FilledButtonProps | GhostButtonProps;
+export interface TextButtonProps extends BaseButtonProps {
+  variant?: "text";
+  color?: "secondary";
+}
+
+export type ButtonProps = FilledButtonProps | GhostButtonProps | TextButtonProps;

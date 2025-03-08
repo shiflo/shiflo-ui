@@ -30,8 +30,8 @@
   "scripts": {
     "build": "vite build",
     "watch": "vite build --watch",
-    "prettier": "prettier --write --config ./.prettierrc \"**/*.{js,mjs,ts,jsx,tsx,mts,json}\"",
-    "convention": "pnpm prettier && eslint --fix \"**/*.{js,mjs,ts,jsx,tsx,mts,html}\"",
+    "prettier": "prettier --write --config ./.prettierrc \"**/*.{js,mjs,ts,jsx,tsx,mts,json,html}\"",
+    "convention": "pnpm prettier && eslint --fix \"**/*.{js,mjs,ts,jsx,tsx,mts}\"",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -75,7 +75,7 @@
     "basic-styled": "latest"
   },
   "lint-staged": {
-    "*.{js,mjs,ts,jsx,tsx,mts,json}": "prettier --write",
-    "*.{js,mjs,ts,jsx,tsx,mts,html}": "eslint --fix"
+    "*.{js,mjs,ts,jsx,tsx,mts,json,html}": "prettier --write",
+    "*.{js,mjs,ts,jsx,tsx,mts}": "eslint --fix"
   }
 }

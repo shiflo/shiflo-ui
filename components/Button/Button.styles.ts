@@ -49,6 +49,29 @@ export const StyledButton = styled.button<ButtonProps>`
           }
         });
         break;
+      case "text":
+        Object.assign(style, {
+          backgroundColor: "transparent",
+          color: mode === "dark" ? neutral["800"] : neutral["700"], // 기본 텍스트 색상 (더 강조된 중립색)
+          "& svg": {
+            color: mode === "dark" ? neutral["800"] : neutral["700"]
+          },
+          "&:hover": {
+            backgroundColor: neutral["200"]
+          },
+          "&:active": {
+            transform: "scale(0.95)",
+            backgroundColor: neutral["300"]
+          },
+          "&:disabled": {
+            color: neutral["500"],
+            backgroundColor: "transparent",
+            cursor: "not-allowed",
+            textDecoration: "none"
+          }
+        });
+
+        break;
       default:
         if (color === "secondary") {
           Object.assign(style, {

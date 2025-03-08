@@ -7,9 +7,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
   { children, variant = "filled", size = "medium", color = "primary", ...props },
   ref
 ) {
+  if (variant === "text") {
+    return (
+      <StyledButton ref={ref} variant={"text"} color={"secondary"} {...props}>
+        {children}
+      </StyledButton>
+    );
+  }
+
   if (variant === "ghost") {
     return (
-      <StyledButton ref={ref} variant={variant} color={"primary"} {...props}>
+      <StyledButton ref={ref} variant={"ghost"} color={"primary"} {...props}>
         {children}
       </StyledButton>
     );
