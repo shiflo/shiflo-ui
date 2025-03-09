@@ -9,6 +9,8 @@ export const StyledTypography = styled.div<TypographyProps>`
   transition:
     font-size 0.2s,
     line-height 0.2s,
+    border-width 0.2s,
+    border-radius 0.2s,
     border-color 0.2s,
     color 0.2s;
 

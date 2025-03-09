@@ -9,9 +9,15 @@ export const StyledButton = styled.button<ButtonProps>`
   gap: ${({ theme: { spacing } }) => spacing["100"]};
   font-weight: 500;
   transition:
+    transform 0.2s ease-out,
     background-color 0.2s,
-    color 0.2s,
-    transform 0.2s ease-out;
+    padding 0.2s,
+    font-size 0.2s,
+    font-weight 0.2s,
+    border-width 0.2s,
+    border-radius 0.2s,
+    border-color 0.2s,
+    color 0.2s;
   border: 1px solid transparent;
 
   ${({

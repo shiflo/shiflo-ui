@@ -8,6 +8,8 @@ import { BoxProps } from "./Box.typing";
 export const StyledBox = styled.div<BoxProps>`
   transition:
     background-color 0.2s,
+    border-width 0.2s,
+    border-radius 0.2s,
     border-color 0.2s,
     color 0.2s;
 
