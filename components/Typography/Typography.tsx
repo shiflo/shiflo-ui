@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
-import { StyledTypography } from "./Typography.styles";
-import { TypographyProps } from "./Typography.typing";
+import { StyledTypography } from "@components/Typography/Typography.styles";
+import { TypographyProps } from "@components/Typography/Typography.typing";
 
 const Typography = forwardRef<HTMLDivElement, TypographyProps>(function Typography(
   { children, variant = "body2", fontWeight = 400, ...props },

@@ -1,9 +1,8 @@
 import styled from "basic-styled";
 
+import { BoxProps } from "@components/Box/Box.typing";
 import getUtilityProps from "@utils/getUtilityProps";
 import getValueByPath from "@utils/getValueByPath";
-
-import { BoxProps } from "./Box.typing";
 
 export const StyledBox = styled.div<BoxProps>`
   transition:

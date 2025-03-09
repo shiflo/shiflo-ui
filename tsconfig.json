@@ -11,11 +11,14 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"],
+      "@assets/icons/*": ["assets/icons/*"],
       "@assets/*": ["assets/*"],
+      "@components/*": ["components/*"],
       "@theme/*": ["theme/*"],
       "@typings/*": ["typings/*"],
       "@utils/*": ["utils/*"]
     }
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts"],
+  "exclude": ["node_modules", "dist"]
 }

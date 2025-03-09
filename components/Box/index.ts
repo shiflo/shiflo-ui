@@ -1,6 +1,6 @@
-import Box from "./Box";
+import Box from "@components/Box/Box";
 
-import { BoxProps } from "./Box.typing";
+import { BoxProps } from "@components/Box/Box.typing";
 
 export type { BoxProps };
 

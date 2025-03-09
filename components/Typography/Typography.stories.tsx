@@ -1,11 +1,8 @@
+import Typography, { TypographyProps } from "@components/Typography";
 import light from "@theme/light";
 
 import radius from "@theme/radius";
 import spacing from "@theme/spacing";
-
-import Typography from "./Typography";
-
-import { TypographyProps } from "./Typography.typing";
 
 import getObjectPaths from "../../utils/getObjectPaths";
 

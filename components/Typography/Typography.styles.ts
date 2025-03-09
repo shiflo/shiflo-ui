@@ -1,9 +1,8 @@
 import styled from "basic-styled";
 
+import { TypographyProps } from "@components/Typography/Typography.typing";
 import getUtilityProps from "@utils/getUtilityProps";
 import getValueByPath from "@utils/getValueByPath";
-
-import { TypographyProps } from "./Typography.typing";
 
 export const StyledTypography = styled.div<TypographyProps>`
   transition:

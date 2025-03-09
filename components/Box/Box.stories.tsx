@@ -1,14 +1,11 @@
+import Box, { BoxProps } from "@components/Box";
 import light from "@theme/light";
 
 import radius from "@theme/radius";
 
 import spacing from "@theme/spacing";
 
-import Box from "./Box";
-
-import { BoxProps } from "./Box.typing";
-
-import getObjectPaths from "../../utils/getObjectPaths";
+import getObjectPaths from "@utils/getObjectPaths";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

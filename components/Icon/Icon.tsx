@@ -1,9 +1,8 @@
 import { Children, forwardRef, isValidElement, ReactNode } from "react";
 
 import * as Svgs from "@assets/icons";
-
-import { StyledIcon } from "./Icon.styles";
-import { IconProps } from "./Icon.typing";
+import { StyledIcon } from "@components/Icon/Icon.styles";
+import { IconProps } from "@components/Icon/Icon.typing";
 
 const Icon = forwardRef<SVGSVGElement, Omit<IconProps, "children">>(function Icon(
   { name, width = 24, height = 24, ...props },

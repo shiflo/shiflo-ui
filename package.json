@@ -1,11 +1,23 @@
 {
-  "name": "shiflo-ui",
+  "name": "@shiflo/ui",
   "version": "0.0.0",
-  "module": "index.ts",
   "type": "module",
   "files": [
     "dist"
   ],
+  "exports": {
+    "./*": {
+      "import": "./dist/components/*/index.mjs",
+      "types": "./dist/components/*/index.d.ts"
+    },
+    "./theme/ThemeProvider": {
+      "import": "./dist/theme/ThemeProvider.mjs",
+      "types": "./dist/theme/ThemeProvider.d.ts"
+    },
+    "./theme/typing": {
+      "types": "./dist/theme/typing.d.ts"
+    }
+  },
   "sideEffects": false,
   "keywords": [
     "react",
@@ -72,9 +84,9 @@
     "vite-plugin-svgr": "^4.3.0"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
-    "basic-styled": "latest"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "basic-styled": ">=0.0.14"
   },
   "lint-staged": {
     "*.{js,mjs,ts,jsx,tsx,mts,json,html}": "prettier --write",

@@ -1,12 +1,9 @@
 import * as Svgs from "@assets/icons";
 
+import Icon, { IconProps } from "@components/Icon";
 import light from "@theme/light";
 
 import getObjectPaths from "@utils/getObjectPaths";
-
-import Icon from "./Icon";
-
-import { IconProps } from "./Icon.typing";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

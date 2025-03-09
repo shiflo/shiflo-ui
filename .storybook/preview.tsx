@@ -1,6 +1,3 @@
-import ResetStyle from "basic-styled/setup/ResetStyle";
-
-import GlobalStyle from "@theme/GlobalStyle";
 import ThemeProvider from "@theme/ThemeProvider";
 
 import type { Preview } from "@storybook/react";
@@ -34,8 +31,6 @@ const preview: Preview = {
   decorators: [
     (Story, { globals: { theme } }) => (
       <ThemeProvider theme={theme}>
-        <ResetStyle />
-        <GlobalStyle />
         <Story />
       </ThemeProvider>
     )
