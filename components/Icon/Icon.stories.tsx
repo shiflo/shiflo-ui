@@ -2,11 +2,11 @@ import * as Svgs from "@assets/icons";
 
 import light from "@theme/light";
 
+import getObjectPaths from "@utils/getObjectPaths";
+
 import Icon from "./Icon";
 
 import { IconProps } from "./Icon.typing";
-
-import getObjectPaths from "../../utils/getObjectPaths";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

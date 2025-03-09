@@ -26,6 +26,11 @@ const preview: Preview = {
       }
     }
   },
+  argTypes: {
+    css: {
+      control: false
+    }
+  },
   decorators: [
     (Story, { globals: { theme } }) => (
       <ThemeProvider theme={theme}>

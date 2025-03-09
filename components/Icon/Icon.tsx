@@ -5,7 +5,7 @@ import * as Svgs from "@assets/icons";
 import { StyledIcon } from "./Icon.styles";
 import { IconProps } from "./Icon.typing";
 
-const Icon = forwardRef<SVGSVGElement, IconProps>(function Icon(
+const Icon = forwardRef<SVGSVGElement, Omit<IconProps, "children">>(function Icon(
   { name, width = 24, height = 24, ...props },
   ref
 ) {

@@ -1,23 +1,20 @@
 import light from "@theme/light";
 
 import radius from "@theme/radius";
+
 import spacing from "@theme/spacing";
 
-import Typography from "./Typography";
+import Box from "./Box";
 
-import { TypographyProps } from "./Typography.typing";
+import { BoxProps } from "./Box.typing";
 
 import getObjectPaths from "../../utils/getObjectPaths";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-const meta: Meta<typeof Typography> = {
-  component: Typography,
+const meta: Meta<typeof Box> = {
+  component: Box,
   argTypes: {
-    variant: {
-      control: "select",
-      options: Object.keys(light.typography)
-    },
     m: {
       control: "select",
       options: Object.keys(spacing)
@@ -73,6 +70,10 @@ const meta: Meta<typeof Typography> = {
     borderLeft: {
       control: "text"
     },
+    br: {
+      control: "select",
+      options: Object.keys(radius)
+    },
     brtl: {
       control: "select",
       options: Object.keys(radius)
@@ -89,6 +90,10 @@ const meta: Meta<typeof Typography> = {
       control: "select",
       options: Object.keys(radius)
     },
+    backgroundColor: {
+      control: "select",
+      options: getObjectPaths(light.palette)
+    },
     borderColor: {
       control: "select",
       options: getObjectPaths(light.palette)
@@ -98,16 +103,14 @@ const meta: Meta<typeof Typography> = {
       options: getObjectPaths(light.palette)
     }
   }
-} satisfies Meta<TypographyProps>;
+} satisfies Meta<BoxProps>;
 
 export default meta;
-type Story = StoryObj<typeof Typography>;
+type Story = StoryObj<typeof Box>;
 
 export const Default: Story = {
   args: {
-    children: "Typography",
-    variant: "body1",
-    fontWeight: 400,
+    children: "Box",
     display: "flex",
     flex: "auto",
     flexBasis: "auto",
@@ -118,9 +121,11 @@ export const Default: Story = {
     flexWrap: "wrap",
     justifyContent: "flex-start",
     alignItems: "center",
-    color: "primary.main",
-    noWrap: false,
-    lineClamp: 0,
-    textAlign: "left"
+    p: "300",
+    backgroundColor: "primary.main",
+    border: "1px solid",
+    borderColor: "primary.main",
+    br: "300",
+    color: "secondary.main"
   }
 };
