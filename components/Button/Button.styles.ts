@@ -77,7 +77,6 @@ export const StyledButton = styled.button<ButtonProps>`
             textDecoration: "none"
           }
         });
-
         break;
       default:
         if (color === "secondary") {
