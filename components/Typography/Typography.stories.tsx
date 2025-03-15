@@ -4,7 +4,7 @@ import light from "@theme/light";
 import radius from "@theme/radius";
 import spacing from "@theme/spacing";
 
-import getObjectPaths from "../../utils/getObjectPaths";
+import getObjectPaths from "@utils/getObjectPaths";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

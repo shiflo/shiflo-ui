@@ -1,12 +1,7 @@
 import radius from "@theme/radius";
 import spacing from "@theme/spacing";
 
-import type { css } from "basic-styled";
 import type { Properties } from "csstype";
-
-export interface ComponentProps {
-  css?: ReturnType<typeof css>;
-}
 
 export type UtilityProps = Partial<
   Pick<

@@ -1,21 +1,16 @@
-import { forwardRef } from "react";
-
 import { StyledButton } from "@components/Button/Button.styles";
 import { ButtonProps } from "@components/Button/Button.typing";
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
-  {
-    children,
-    variant = "filled",
-    size = "medium",
-    color = "primary",
-    startIcon,
-    endIcon,
-    css,
-    ...props
-  },
-  ref
-) {
+function Button({
+  ref,
+  children,
+  variant = "filled",
+  size = "medium",
+  color = "primary",
+  startIcon,
+  endIcon,
+  ...props
+}: ButtonProps) {
   if (variant === "text") {
     return (
       <StyledButton ref={ref} variant={"text"} size={size} color={"secondary"} {...props}>
@@ -43,6 +38,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
       {endIcon}
     </StyledButton>
   );
-});
+}
 
 export default Button;

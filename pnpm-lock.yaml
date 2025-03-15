@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       basic-styled:
-        specifier: '>=0.1.5'
-        version: 0.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: '>=0.1.6'
+        version: 0.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -1218,8 +1218,8 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  basic-styled@0.1.5:
-    resolution: {integrity: sha512-WJpe+LXZqNVBkzIg7LMWfi5JQAFUkoZ0CYJfHlpbQbDCmTV485oEyUVPbsEzxOq1rIZ3wxreiZTPh8tFZoDLNg==}
+  basic-styled@0.1.6:
+    resolution: {integrity: sha512-RFhXQbqHqT7nnWlzqvk8CWu/rqBMCYA5SyJWlKHkjQUQgCSdzkPgXBIQg2RE5PO35JomSp6lJhN/lBTD7Aj+mw==}
     peerDependencies:
       react: ^19.0.0
       react-dom: ^19.0.0
@@ -4109,7 +4109,7 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  basic-styled@0.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  basic-styled@0.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)

@@ -1,8 +1,6 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { ComponentPropsWithRef, ReactNode } from "react";
 
-import { ComponentProps } from "@typings/utility";
-
-export interface BaseButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, ComponentProps {
+export interface BaseButtonProps extends ComponentPropsWithRef<"button"> {
   size?: "xSmall" | "small" | "medium" | "large";
   startIcon?: ReactNode;
   endIcon?: ReactNode;

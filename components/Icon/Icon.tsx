@@ -1,13 +1,10 @@
-import { Children, forwardRef, isValidElement, ReactNode } from "react";
+import { Children, isValidElement, ReactNode } from "react";
 
 import * as Svgs from "@assets/icons";
 import { StyledIcon } from "@components/Icon/Icon.styles";
 import { IconProps } from "@components/Icon/Icon.typing";
 
-const Icon = forwardRef<SVGSVGElement, Omit<IconProps, "children">>(function Icon(
-  { name, width = 24, height = 24, ...props },
-  ref
-) {
+function Icon({ ref, name, width = 24, height = 24, ...props }: IconProps) {
   const SvgIcon = Svgs[name] as unknown as () => ReactNode;
 
   return Children.map(SvgIcon(), (child) => {
@@ -25,6 +22,6 @@ const Icon = forwardRef<SVGSVGElement, Omit<IconProps, "children">>(function Ico
 
     return <StyledIcon ref={ref} {...newProps} />;
   });
-});
+}
 
 export default Icon;

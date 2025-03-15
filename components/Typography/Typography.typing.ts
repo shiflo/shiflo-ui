@@ -1,13 +1,10 @@
-import { HTMLAttributes } from "react";
+import { ComponentPropsWithRef } from "react";
 
-import { UtilityProps, ComponentProps, RecursionPath } from "@typings/utility";
+import { UtilityProps, RecursionPath } from "@typings/utility";
 
 import type { BasicTheme } from "basic-styled";
 
-export interface TypographyProps
-  extends HTMLAttributes<HTMLDivElement>,
-    ComponentProps,
-    UtilityProps {
+export interface TypographyProps extends ComponentPropsWithRef<"div">, UtilityProps {
   variant?: keyof BasicTheme["typography"];
   fontWeight?: 400 | 500 | 700;
   color?: RecursionPath<BasicTheme["palette"]> | "inherit";
