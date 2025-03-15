@@ -86,7 +86,7 @@
     "vite-plugin-svgr": "^4.3.0"
   },
   "peerDependencies": {
-    "basic-styled": ">=0.1.0",
+    "basic-styled": ">=0.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
