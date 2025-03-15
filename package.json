@@ -1,5 +1,6 @@
 {
   "name": "@shiflo/ui",
+  "description": "Shiflo React UI Components",
   "version": "0.0.0",
   "type": "module",
   "files": [
@@ -44,9 +45,10 @@
     "watch": "vite build --watch",
     "prettier": "prettier --write --config ./.prettierrc \"**/*.{js,mjs,ts,jsx,tsx,mts,json,html}\"",
     "convention": "pnpm prettier && eslint --fix \"**/*.{js,mjs,ts,jsx,tsx,mts}\"",
-    "prepare": "husky",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky",
+    "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.5",
@@ -77,16 +79,16 @@
     "lint-staged": "^15.4.3",
     "prettier": "^3.5.3",
     "storybook": "^8.6.4",
-    "typescript": "^5.8.2",
+    "typescript": "^5.7.3",
     "typescript-eslint": "^8.26.0",
     "vite": "^6.2.1",
     "vite-plugin-dts": "^4.5.3",
     "vite-plugin-svgr": "^4.3.0"
   },
   "peerDependencies": {
+    "basic-styled": ">=0.1.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "basic-styled": ">=0.0.14"
+    "react-dom": "^19.0.0"
   },
   "lint-staged": {
     "*.{js,mjs,ts,jsx,tsx,mts,json,html}": "prettier --write",

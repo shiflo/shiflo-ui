@@ -1,11 +1,16 @@
 import { PropsWithChildren } from "react";
 
+import createBuilder from "basic-styled/setup/createBuilder";
 import ResetStyle from "basic-styled/setup/ResetStyle";
 import BasicThemeProvider from "basic-styled/setup/ThemeProvider";
 
 import dark from "@theme/dark";
 import GlobalStyle from "@theme/GlobalStyle";
 import light from "@theme/light";
+
+createBuilder({
+  prefix: "shiflo-ui"
+});
 
 interface ThemeProviderProps {
   theme: "light" | "dark";
