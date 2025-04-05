@@ -1,10 +1,10 @@
 import styled from "basic-styled";
 
-import { TypographyProps } from "@components/Typography/Typography.typing";
+import { BaseTypographyProps } from "@components/Typography/Typography.typing";
 import getUtilityProps from "@utils/getUtilityProps";
 import getValueByPath from "@utils/getValueByPath";
 
-export const StyledTypography = styled.div<TypographyProps>`
+export const StyledTypography = styled.div<BaseTypographyProps>`
   transition:
     font-size 0.2s,
     line-height 0.2s,

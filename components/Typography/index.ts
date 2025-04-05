@@ -1,7 +1,7 @@
 import Typography from "./Typography";
 
-import { TypographyProps } from "./Typography.typing";
+import { BaseTypographyProps } from "./Typography.typing";
 
-export type { TypographyProps };
+export type { BaseTypographyProps };
 
 export default Typography;

@@ -1,4 +1,4 @@
-import Typography, { TypographyProps } from "@components/Typography";
+import Typography, { BaseTypographyProps } from "@components/Typography";
 import light from "@theme/light";
 
 import radius from "@theme/radius";
@@ -95,7 +95,7 @@ const meta: Meta<typeof Typography> = {
       options: getObjectPaths(light.palette)
     }
   }
-} satisfies Meta<TypographyProps>;
+} satisfies Meta<BaseTypographyProps>;
 
 export default meta;
 type Story = StoryObj<typeof Typography>;

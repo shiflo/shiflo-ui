@@ -1,10 +1,10 @@
 import styled from "basic-styled";
 
-import { BoxProps } from "@components/Box/Box.typing";
+import { BaseBoxProps } from "@components/Box/Box.typing";
 import getUtilityProps from "@utils/getUtilityProps";
 import getValueByPath from "@utils/getValueByPath";
 
-export const StyledBox = styled.div<BoxProps>`
+export const StyledBox = styled.div<BaseBoxProps>`
   transition:
     background-color 0.2s,
     border-width 0.2s,

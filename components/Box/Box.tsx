@@ -1,8 +1,8 @@
 import { StyledBox } from "@components/Box/Box.styles";
-import { BoxProps } from "@components/Box/Box.typing";
+import { BoxComponent } from "@components/Box/Box.typing";
 
-function Box(props: BoxProps) {
+const Box: BoxComponent = (props) => {
   return <StyledBox {...props} />;
-}
+};
 
 export default Box;
