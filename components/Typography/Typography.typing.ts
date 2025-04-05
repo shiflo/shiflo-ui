@@ -1,11 +1,11 @@
-import { ComponentPropsWithRef, ReactNode, ElementType } from "react";
+import { ReactNode, ElementType } from "react";
 
 import { PolymorphicComponentProps } from "@typings/component";
 import { UtilityProps, RecursionPath } from "@typings/utility";
 
 import type { BasicTheme } from "basic-styled";
 
-export interface BaseTypographyProps extends ComponentPropsWithRef<"div">, UtilityProps {
+export interface BaseTypographyProps extends UtilityProps {
   variant?: keyof BasicTheme["typography"];
   fontWeight?: 400 | 500 | 700;
   color?: RecursionPath<BasicTheme["palette"]> | "inherit";
