@@ -1,3 +1,5 @@
+import { CSS } from "basic-styled/core/typing";
+
 import radius from "@theme/radius";
 import spacing from "@theme/spacing";
 
@@ -27,7 +29,9 @@ export type UtilityProps = Partial<
       keyof typeof spacing
     > &
     Record<"br" | "brtl" | "brtr" | "brml" | "brmr", keyof typeof radius>
->;
+> & {
+  css?: CSS;
+};
 
 export type RecursionPath<T, Prefix extends string = ""> = Exclude<
   {

@@ -1,7 +1,7 @@
 import Icon from "@components/Icon/Icon";
 
-import { IconProps } from "@components/Icon/Icon.typing";
+import { BaseIconProps, IconProps } from "@components/Icon/Icon.typing";
 
-export type { IconProps };
+export type { BaseIconProps, IconProps };
 
 export default Icon;

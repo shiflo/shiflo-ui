@@ -1,4 +1,4 @@
-import Box, { BaseBoxProps } from "@components/Box";
+import Box, { BoxProps } from "@components/Box";
 import light from "@theme/light";
 
 import radius from "@theme/radius";
@@ -100,7 +100,7 @@ const meta: Meta<typeof Box> = {
       options: getObjectPaths(light.palette)
     }
   }
-} satisfies Meta<BaseBoxProps>;
+} satisfies Meta<BoxProps<"div">>;
 
 export default meta;
 type Story = StoryObj<typeof Box>;

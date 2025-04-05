@@ -1,12 +1,14 @@
 import { ComponentPropsWithRef } from "react";
 
-import { RecursionPath } from "@typings/utility";
+import { RecursionPath, UtilityProps } from "@typings/utility";
 
 import type * as Svgs from "@assets/icons";
 
 import type { BasicTheme } from "basic-styled";
 
-export interface IconProps extends Omit<ComponentPropsWithRef<"svg">, "children"> {
+export interface BaseIconProps extends Pick<UtilityProps, "css"> {
   name: keyof typeof Svgs;
   color?: RecursionPath<BasicTheme["palette"]> | "inherit";
 }
+
+export type IconProps = BaseIconProps & Omit<ComponentPropsWithRef<"svg">, "children">;

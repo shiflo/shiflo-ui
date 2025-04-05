@@ -1,6 +1,8 @@
 import { ComponentPropsWithRef, ReactNode } from "react";
 
-export interface BaseButtonProps extends ComponentPropsWithRef<"button"> {
+import { UtilityProps } from "@typings/utility";
+
+export interface BaseButtonProps extends Pick<UtilityProps, "css"> {
   size?: "xSmall" | "small" | "medium" | "large";
   startIcon?: ReactNode;
   endIcon?: ReactNode;
@@ -21,4 +23,5 @@ export interface TextButtonProps extends BaseButtonProps {
   color?: "secondary";
 }
 
-export type ButtonProps = FilledButtonProps | GhostButtonProps | TextButtonProps;
+export type ButtonProps = (FilledButtonProps | GhostButtonProps | TextButtonProps) &
+  ComponentPropsWithRef<"button">;

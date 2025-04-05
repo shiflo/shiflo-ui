@@ -26,7 +26,9 @@ export default defineConfig({
                   "**/*.styles.{ts,tsx}",
                   "**/*.stories.tsx",
                   "**/typing.ts",
-                  "**/*.typing.ts"
+                  "**/*.typing.ts",
+                  "typings/utility.ts",
+                  "typings/component.ts"
                 ]
               })
               .map((file) => [

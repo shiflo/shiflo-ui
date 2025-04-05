@@ -1,8 +1,15 @@
 import styled from "basic-styled";
 
-import { ButtonProps } from "@components/Button/Button.typing";
+import {
+  BaseButtonProps,
+  FilledButtonProps,
+  GhostButtonProps,
+  TextButtonProps
+} from "@components/Button/Button.typing";
 
-export const StyledButton = styled.button<ButtonProps>`
+export const StyledButton = styled.button<
+  BaseButtonProps & (FilledButtonProps | GhostButtonProps | TextButtonProps)
+>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
