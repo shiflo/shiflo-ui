@@ -32,7 +32,8 @@ export default function getUtilityProps<T>({
   brtl,
   brtr,
   brml,
-  brmr
+  brmr,
+  gap
 }: T & UtilityProps) {
   const style = {};
 
@@ -114,6 +115,10 @@ export default function getUtilityProps<T>({
 
   if (pr) {
     Object.assign(style, { paddingRight: spacing[pr] });
+  }
+
+  if (gap) {
+    Object.assign(style, { gap: spacing[gap] });
   }
 
   if (border) {

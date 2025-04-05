@@ -1,7 +1,7 @@
 import Box from "@components/Box/Box";
 
-import { BaseBoxProps } from "@components/Box/Box.typing";
+import { BoxProps } from "@components/Box/Box.typing";
 
-export type { BaseBoxProps };
+export type { BoxProps };
 
 export default Box;

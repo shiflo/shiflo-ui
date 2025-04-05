@@ -23,7 +23,7 @@ export type UtilityProps = Partial<
     | "borderLeft"
   > &
     Record<
-      "m" | "mt" | "mb" | "mr" | "ml" | "p" | "pt" | "pb" | "pl" | "pr",
+      "m" | "mt" | "mb" | "mr" | "ml" | "p" | "pt" | "pb" | "pl" | "pr" | "gap",
       keyof typeof spacing
     > &
     Record<"br" | "brtl" | "brtr" | "brml" | "brmr", keyof typeof radius>
