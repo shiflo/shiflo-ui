@@ -106,7 +106,7 @@ export default function getUtilityProps<T>({
   }
 
   if (pb) {
-    Object.assign(style, { paddingRight: spacing[pb] });
+    Object.assign(style, { paddingBottom: spacing[pb] });
   }
 
   if (pl) {
