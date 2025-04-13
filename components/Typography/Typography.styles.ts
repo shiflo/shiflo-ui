@@ -25,16 +25,23 @@ export const StyledTypography = styled.div<BaseTypographyProps>`
 
     if (borderColor) {
       Object.assign(style, {
-        borderColor: getValueByPath(palette, borderColor)
+        borderColor: getValueByPath(palette, borderColor) || "inherit"
       });
     }
 
     Object.assign(style, {
-      color: getValueByPath(palette, color)
+      color: getValueByPath(palette, color) || "inherit"
     });
 
     return style;
   }};
+
+  ${({ textAlign }) =>
+    textAlign
+      ? {
+          textAlign
+        }
+      : {}};
 
   ${({ noWrap }) =>
     noWrap

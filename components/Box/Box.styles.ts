@@ -19,19 +19,19 @@ export const StyledBox = styled.div<BaseBoxProps>`
 
     if (backgroundColor) {
       Object.assign(style, {
-        backgroundColor: getValueByPath(palette, backgroundColor)
+        backgroundColor: getValueByPath(palette, backgroundColor) || "inherit"
       });
     }
 
     if (borderColor) {
       Object.assign(style, {
-        borderColor: getValueByPath(palette, borderColor)
+        borderColor: getValueByPath(palette, borderColor) || "inherit"
       });
     }
 
     if (color) {
       Object.assign(style, {
-        color: getValueByPath(palette, color)
+        color: getValueByPath(palette, color) || "inherit"
       });
     }
 
