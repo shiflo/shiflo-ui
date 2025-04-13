@@ -27,12 +27,6 @@ export const StyledButton = styled.button<
     color 0.2s;
   border: 1px solid transparent;
 
-  @media (pointer: coarse), (any-pointer: coarse) {
-    &:hover {
-      pointer-events: none;
-    }
-  }
-
   ${({
     theme: {
       mode,
@@ -58,6 +52,11 @@ export const StyledButton = styled.button<
           "&:hover": {
             backgroundColor: primary.alpha["20"]
           },
+          "@media (pointer: coarse), (any-pointer: coarse)": {
+            "&:hover": {
+              backgroundColor: primary.alpha["10"]
+            }
+          },
           "&:active": {
             transform: "scale(0.9)",
             backgroundColor: primary.alpha["30"]
@@ -78,6 +77,11 @@ export const StyledButton = styled.button<
           },
           "&:hover": {
             backgroundColor: neutral["200"]
+          },
+          "@media (pointer: coarse), (any-pointer: coarse)": {
+            "&:hover": {
+              backgroundColor: "transparent"
+            }
           },
           "&:active": {
             transform: "scale(0.9)",
@@ -102,6 +106,11 @@ export const StyledButton = styled.button<
             "&:hover": {
               backgroundColor: secondary.light
             },
+            "@media (pointer: coarse), (any-pointer: coarse)": {
+              "&:hover": {
+                backgroundColor: secondary.main
+              }
+            },
             "&:active": {
               transform: "scale(0.9)",
               backgroundColor: secondary.dark
@@ -123,6 +132,11 @@ export const StyledButton = styled.button<
           },
           "&:hover": {
             backgroundColor: primary.hover
+          },
+          "@media (pointer: coarse), (any-pointer: coarse)": {
+            "&:hover": {
+              backgroundColor: primary.main
+            }
           },
           "&:active": {
             transform: "scale(0.9)",
