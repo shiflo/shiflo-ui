@@ -27,6 +27,12 @@ export const StyledButton = styled.button<
     color 0.2s;
   border: 1px solid transparent;
 
+  @media (pointer: coarse), (any-pointer: coarse) {
+    &:hover {
+      pointer-events: none;
+    }
+  }
+
   ${({
     theme: {
       mode,
