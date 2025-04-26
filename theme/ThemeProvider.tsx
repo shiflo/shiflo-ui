@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 
-import createBuilder from "basic-styled/setup/createBuilder";
+import configureStyled from "basic-styled/setup/configureStyled";
 import ResetStyle from "basic-styled/setup/ResetStyle";
 import BasicThemeProvider from "basic-styled/setup/ThemeProvider";
 
@@ -8,7 +8,7 @@ import dark from "@theme/dark";
 import GlobalStyle from "@theme/GlobalStyle";
 import light from "@theme/light";
 
-createBuilder({
+configureStyled({
   prefix: "shiflo-ui"
 });
 
