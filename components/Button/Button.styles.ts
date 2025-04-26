@@ -49,12 +49,9 @@ export const StyledButton = styled.button<
           "& svg": {
             color: primary.main
           },
-          "&:hover": {
-            backgroundColor: primary.alpha["20"]
-          },
-          "@media (pointer: coarse), (any-pointer: coarse)": {
+          "@media (hover: hover)": {
             "&:hover": {
-              backgroundColor: primary.alpha["10"]
+              backgroundColor: primary.alpha["20"]
             }
           },
           "&:active": {
@@ -75,12 +72,9 @@ export const StyledButton = styled.button<
           "& svg": {
             color: mode === "dark" ? neutral["800"] : neutral["700"]
           },
-          "&:hover": {
-            backgroundColor: neutral["200"]
-          },
-          "@media (pointer: coarse), (any-pointer: coarse)": {
+          "@media (hover: hover)": {
             "&:hover": {
-              backgroundColor: "transparent"
+              backgroundColor: neutral["200"]
             }
           },
           "&:active": {
@@ -103,12 +97,9 @@ export const StyledButton = styled.button<
             "& svg": {
               color: mode === "dark" ? neutral["900"] : neutral["700"]
             },
-            "&:hover": {
-              backgroundColor: secondary.light
-            },
-            "@media (pointer: coarse), (any-pointer: coarse)": {
+            "@media (hover: hover)": {
               "&:hover": {
-                backgroundColor: secondary.main
+                backgroundColor: secondary.light
               }
             },
             "&:active": {
@@ -130,12 +121,9 @@ export const StyledButton = styled.button<
           "& svg": {
             color: mode === "dark" ? neutral["900"] : secondary.main
           },
-          "&:hover": {
-            backgroundColor: primary.hover
-          },
-          "@media (pointer: coarse), (any-pointer: coarse)": {
+          "@media (hover: hover)": {
             "&:hover": {
-              backgroundColor: primary.main
+              backgroundColor: primary.hover
             }
           },
           "&:active": {
