@@ -66,7 +66,8 @@ const light: BasicTheme = {
     },
     common: {
       background: "#FFFFFF",
-      surface: "#FFFFFF"
+      surface: "#FFFFFF",
+      overlay: "rgba(0, 0, 0, 0.5)"
     },
     text: {
       primary: "#212529",

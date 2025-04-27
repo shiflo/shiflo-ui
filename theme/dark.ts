@@ -66,7 +66,8 @@ const dark: BasicTheme = {
     },
     common: {
       background: "#22252A",
-      surface: "#30333A"
+      surface: "#30333A",
+      overlay: "rgba(0, 0, 0, 0.7)"
     },
     text: {
       primary: "#EAECEF",

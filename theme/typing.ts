@@ -68,6 +68,7 @@ declare module "basic-styled" {
       common: {
         background: string;
         surface: string;
+        overlay: string;
       };
       text: {
         primary: string;
