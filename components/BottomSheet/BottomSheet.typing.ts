@@ -2,7 +2,7 @@ import { ComponentPropsWithRef } from "react";
 
 export interface BottomSheetProps extends ComponentPropsWithRef<"div"> {
   open?: boolean;
-  onClose: () => void;
+  onClose?: () => void;
   transitionDuration?: number;
   hideDragHandleBar?: boolean;
 }

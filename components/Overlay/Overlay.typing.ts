@@ -2,7 +2,7 @@ import { ComponentPropsWithRef } from "react";
 
 export interface OverlayProps extends ComponentPropsWithRef<"div"> {
   open?: boolean;
-  onClose: () => void;
+  onClose?: () => void;
   transitionDuration?: number;
   placement?:
     | "top-left"

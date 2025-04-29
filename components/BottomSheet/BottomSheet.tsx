@@ -43,10 +43,10 @@ function BottomSheet({
   };
 
   useEffect(() => {
-    let animationFrameId: number | undefined;
+    let rafId: number | undefined;
 
     if (open) {
-      animationFrameId = requestAnimationFrame(() => {
+      rafId = requestAnimationFrame(() => {
         setIsOpen(true);
       });
     } else {
@@ -54,8 +54,8 @@ function BottomSheet({
     }
 
     return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
+      if (rafId) {
+        cancelAnimationFrame(rafId);
       }
     };
   }, [open]);

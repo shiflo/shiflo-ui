@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useImperativeHandle, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 import { StyledOverlay, OverlayWrapper, OverlayContent } from "@components/Overlay/Overlay.styles";
@@ -11,39 +11,53 @@ function Overlay({
   transitionDuration = 200,
   placement,
   style,
+  ref,
   ...props
 }: OverlayProps) {
   const [isUnmounted, setIsUnmounted] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    let animationFrameId: number | undefined;
-    let timeoutId: number | undefined;
+  const overlayRef = useRef<HTMLDivElement>(null);
+
+  useImperativeHandle(ref, () => overlayRef.current as HTMLDivElement);
+
+  useLayoutEffect(() => {
+    let rafId: number | undefined;
 
     if (open) {
       setIsUnmounted(false);
 
-      animationFrameId = requestAnimationFrame(() => {
+      rafId = requestAnimationFrame(() => {
         setIsOpen(true);
       });
     } else {
       setIsOpen(false);
-
-      timeoutId = setTimeout(() => {
-        setIsUnmounted(true);
-      }, transitionDuration);
     }
 
     return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
-
-      if (timeoutId) {
-        clearTimeout(timeoutId);
+      if (rafId) {
+        cancelAnimationFrame(rafId);
       }
     };
   }, [open, transitionDuration]);
+
+  useEffect(() => {
+    const overlayElement = overlayRef.current;
+
+    const handleTransitionEnd = (e: globalThis.TransitionEvent) => {
+      if (open) return;
+
+      if (e.propertyName === "opacity") {
+        setIsUnmounted(true);
+      }
+    };
+
+    overlayElement?.addEventListener("transitionend", handleTransitionEnd);
+
+    return () => {
+      overlayElement?.removeEventListener("transitionend", handleTransitionEnd);
+    };
+  }, [open]);
 
   if (isUnmounted) {
     return null;
@@ -52,6 +66,7 @@ function Overlay({
   return createPortal(
     <OverlayWrapper onClick={onClose}>
       <StyledOverlay
+        ref={overlayRef}
         transitionDuration={transitionDuration}
         ease={open ? "in" : "out"}
         style={{

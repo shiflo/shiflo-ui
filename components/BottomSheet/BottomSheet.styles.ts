@@ -11,6 +11,8 @@ export const StyledBottomSheet = styled.div<
   max-height: calc(100% - ${({ theme: { spacing } }) => spacing["800"]});
   overflow-y: auto;
   margin: ${({ theme: { spacing } }) => spacing["400"]};
+  margin-bottom: ${({ theme: { spacing } }) =>
+    `calc(${spacing["400"]} + var(--safe-area-inset-bottom, 0px))`};
   border-radius: ${({ theme: { radius } }) => radius["150"]};
   background-color: ${({
     theme: {
