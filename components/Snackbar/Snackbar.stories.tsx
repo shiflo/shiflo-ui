@@ -40,11 +40,67 @@ export const Default: Story = {
     }, [args.open]);
 
     return (
+      <Snackbar {...args} open={isOpen} onClose={handleClose}>
+        {args.children}
+      </Snackbar>
+    );
+  }
+};
+
+export const WithStartIcon: Story = {
+  args: {
+    children: "Snackbar",
+    open: true,
+    onClose: () => {},
+    transitionDuration: 200,
+    autoHideDuration: 3000,
+    disableAutoHide: false
+  },
+  render: (args: SnackbarProps) => {
+    const [isOpen, setIsOpen] = useState(args.open);
+
+    const handleClose = () => setIsOpen(false);
+
+    useEffect(() => {
+      setIsOpen(args.open);
+    }, [args.open]);
+
+    return (
       <Snackbar
         {...args}
         open={isOpen}
         onClose={handleClose}
         startIcon={<Icon name={"CalendarLine"} color={"common.surface"} width={24} height={24} />}
+      >
+        {args.children}
+      </Snackbar>
+    );
+  }
+};
+
+export const WithAction: Story = {
+  args: {
+    children: "Snackbar",
+    open: true,
+    onClose: () => {},
+    transitionDuration: 200,
+    autoHideDuration: 3000,
+    disableAutoHide: false
+  },
+  render: (args: SnackbarProps) => {
+    const [isOpen, setIsOpen] = useState(args.open);
+
+    const handleClose = () => setIsOpen(false);
+
+    useEffect(() => {
+      setIsOpen(args.open);
+    }, [args.open]);
+
+    return (
+      <Snackbar
+        {...args}
+        open={isOpen}
+        onClose={handleClose}
         action={<Button onClick={handleClose}>Action</Button>}
       >
         {args.children}

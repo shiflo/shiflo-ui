@@ -8,14 +8,15 @@ export const StyledSnackbar = styled.div<
   }
 >`
   position: fixed;
-  bottom: ${({ theme: { spacing } }) => spacing["800"]};
+  bottom: ${({ theme: { spacing } }) =>
+    `calc(${spacing["800"]} + var(--safe-area-inset-bottom, 0px))`};
   left: 50%;
   display: flex;
   align-items: center;
   gap: ${({ theme: { spacing } }) => spacing["400"]};
   width: 100%;
   max-width: calc(100% - ${({ theme: { spacing } }) => spacing["800"]});
-  min-height: 68px;
+  min-height: 56px;
   padding: ${({ theme: { spacing } }) => spacing["400"]};
   background-color: ${({
     theme: {
