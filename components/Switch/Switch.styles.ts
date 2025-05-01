@@ -18,33 +18,37 @@ export const StyledSwitch = styled.button<
   ${({ theme: { palette }, checked, disabled, size }) => {
     const style = {};
 
-    if (size === "small") {
-      Object.assign(style, {
-        width: "40px",
-        height: "24px",
-        "&::after": {
-          width: "16px",
-          height: "16px"
-        }
-      });
-    } else if (size === "medium") {
-      Object.assign(style, {
-        width: "48px",
-        height: "28px",
-        "&::after": {
-          width: "20px",
-          height: "20px"
-        }
-      });
-    } else if (size === "large") {
-      Object.assign(style, {
-        width: "56px",
-        height: "32px",
-        "&::after": {
-          width: "24px",
-          height: "24px"
-        }
-      });
+    switch (size) {
+      case "small":
+        Object.assign(style, {
+          width: "40px",
+          height: "24px",
+          "&::after": {
+            width: "16px",
+            height: "16px"
+          }
+        });
+        break;
+      case "large":
+        Object.assign(style, {
+          width: "56px",
+          height: "32px",
+          "&::after": {
+            width: "24px",
+            height: "24px"
+          }
+        });
+        break;
+      default:
+        Object.assign(style, {
+          width: "48px",
+          height: "28px",
+          "&::after": {
+            width: "20px",
+            height: "20px"
+          }
+        });
+        break;
     }
 
     if (checked) {
