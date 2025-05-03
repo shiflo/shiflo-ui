@@ -1,6 +1,8 @@
 import { ComponentPropsWithRef } from "react";
 
-export interface OverlayProps extends ComponentPropsWithRef<"div"> {
+import { UtilityProps } from "@typings/utility";
+
+export interface OverlayProps extends ComponentPropsWithRef<"div">, Pick<UtilityProps, "css"> {
   open?: boolean;
   onClose?: () => void;
   transitionDuration?: number;

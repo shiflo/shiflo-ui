@@ -16,6 +16,7 @@ function BottomSheet({
   onClick,
   ref,
   hideDragHandleBar,
+  hideOverlay,
   style,
   ...props
 }: BottomSheetProps) {
@@ -30,7 +31,7 @@ function BottomSheet({
   const initialHeightRef = useRef(0);
   const lastVelocityRef = useRef(0);
   const lastTimeRef = useRef(0);
-  const dragThresholdRef = useRef(0.25); // 시트 높이의 25%를 넘으면 닫힘
+  const dragThresholdRef = useRef(0.25);
 
   useImperativeHandle(ref, () => sheetRef.current as HTMLDivElement);
 
@@ -184,6 +185,13 @@ function BottomSheet({
       onClose={onClose}
       transitionDuration={transitionDuration}
       placement={"center-bottom"}
+      css={
+        !hideOverlay
+          ? undefined
+          : {
+              backgroundColor: "transparent !important"
+            }
+      }
     >
       <StyledBottomSheet
         ref={sheetRef}
