@@ -1,6 +1,8 @@
 import { ComponentPropsWithRef } from "react";
 
-export interface DialogProps extends ComponentPropsWithRef<"div"> {
+import { UtilityProps } from "@typings/utility";
+
+export interface DialogProps extends ComponentPropsWithRef<"div">, Pick<UtilityProps, "css"> {
   open?: boolean;
   onClose?: () => void;
   transitionDuration?: number;
