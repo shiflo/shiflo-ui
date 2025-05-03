@@ -1,6 +1,10 @@
 import { ComponentPropsWithRef, ReactNode } from "react";
 
-export interface TextFieldProps extends Omit<ComponentPropsWithRef<"input">, "children" | "size"> {
+import { UtilityProps } from "@typings/utility";
+
+export interface TextFieldProps
+  extends Omit<ComponentPropsWithRef<"input">, "children" | "size">,
+    Pick<UtilityProps, "css"> {
   variant?: "contained" | "outlined";
   startIcon?: ReactNode;
   endIcon?: ReactNode;

@@ -10,6 +10,7 @@ function TextField({
   disabled,
   startIcon,
   endIcon,
+  css,
   onFocus,
   onBlur,
   ...props
@@ -35,6 +36,7 @@ function TextField({
       focused={isFocused}
       fullWidth={fullWidth}
       disabled={disabled}
+      css={css}
     >
       {startIcon && <StartIcon>{startIcon}</StartIcon>}
       <Input {...props} onFocus={handleFocus} onBlur={handleBlur} disabled={disabled} />
