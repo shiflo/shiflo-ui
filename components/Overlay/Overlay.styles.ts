@@ -6,6 +6,7 @@ export const OverlayWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
 `;
 
 export const StyledOverlay = styled.div<
@@ -27,7 +28,6 @@ export const StyledOverlay = styled.div<
     opacity ${({ transitionDuration }) => `${transitionDuration}ms`}
       ${({ ease }) => (ease === "in" ? "ease-in" : "ease-out")},
     background-color 0.2s;
-  z-index: 1;
 `;
 
 export const OverlayContent = styled.div<Pick<OverlayProps, "placement">>`
@@ -36,7 +36,6 @@ export const OverlayContent = styled.div<Pick<OverlayProps, "placement">>`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
 
   ${({ placement }) => {
     const style = {};
