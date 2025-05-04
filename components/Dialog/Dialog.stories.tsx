@@ -16,7 +16,8 @@ export const Default: Story = {
     children: "Dialog",
     open: true,
     onClose: () => {},
-    transitionDuration: 200
+    transitionDuration: 200,
+    maxWidth: "375px"
   },
   render: (args: DialogProps) => {
     const [isOpen, setIsOpen] = useState(args.open);

@@ -6,9 +6,6 @@ export const OverlayWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
 `;
 
 export const StyledOverlay = styled.div<
@@ -30,14 +27,16 @@ export const StyledOverlay = styled.div<
     opacity ${({ transitionDuration }) => `${transitionDuration}ms`}
       ${({ ease }) => (ease === "in" ? "ease-in" : "ease-out")},
     background-color 0.2s;
+  z-index: 1;
 `;
 
 export const OverlayContent = styled.div<Pick<OverlayProps, "placement">>`
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 
   ${({ placement }) => {
     const style = {};
@@ -45,65 +44,61 @@ export const OverlayContent = styled.div<Pick<OverlayProps, "placement">>`
     switch (placement) {
       case "top-left":
         Object.assign(style, {
-          display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "flex-start"
+          top: 0,
+          left: 0
         });
         break;
       case "top-right":
         Object.assign(style, {
-          display: "flex",
-          justifyContent: "flex-end",
-          alignItems: "flex-start"
+          top: 0,
+          right: 0
         });
         break;
       case "bottom-left":
         Object.assign(style, {
-          display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "flex-end"
+          bottom: 0,
+          left: 0
         });
         break;
       case "bottom-right":
         Object.assign(style, {
-          display: "flex",
-          justifyContent: "flex-end",
-          alignItems: "flex-end"
+          bottom: 0,
+          right: 0
         });
         break;
       case "center-top":
         Object.assign(style, {
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-start"
+          top: 0,
+          left: "50%",
+          transform: "translate3d(-50%, 0, 0)"
         });
         break;
       case "center-bottom":
         Object.assign(style, {
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-end"
+          bottom: 0,
+          left: "50%",
+          transform: "translate3d(-50%, 0, 0)"
         });
         break;
       case "center-middle":
         Object.assign(style, {
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center"
+          top: "50%",
+          left: "50%",
+          transform: "translate3d(-50%, -50%, 0)"
         });
         break;
       case "center-left":
         Object.assign(style, {
-          display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "center"
+          top: "50%",
+          left: 0,
+          transform: "translate3d(0, -50%, 0)"
         });
         break;
       case "center-right":
         Object.assign(style, {
-          display: "flex",
-          justifyContent: "flex-end",
-          alignItems: "center"
+          top: "50%",
+          right: 0,
+          transform: "translate3d(0, -50%, 0)"
         });
         break;
       default:

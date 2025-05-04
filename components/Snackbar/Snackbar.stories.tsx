@@ -28,7 +28,8 @@ export const Default: Story = {
     onClose: () => {},
     transitionDuration: 200,
     autoHideDuration: 3000,
-    disableAutoHide: false
+    disableAutoHide: false,
+    maxWidth: "375px"
   },
   render: (args: SnackbarProps) => {
     const [isOpen, setIsOpen] = useState(args.open);

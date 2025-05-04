@@ -3,11 +3,12 @@ import styled from "basic-styled";
 import { DialogProps } from "@components/Dialog/Dialog.typing";
 
 export const StyledDialog = styled.div<
-  Pick<DialogProps, "transitionDuration"> & {
+  Pick<DialogProps, "transitionDuration" | "maxWidth"> & {
     ease: "in" | "out";
   }
 >`
   width: calc(100% - ${({ theme: { spacing } }) => spacing["800"]});
+  max-width: ${({ maxWidth = "375px" }) => maxWidth};
   max-height: calc(100% - ${({ theme: { spacing } }) => spacing["800"]});
   overflow-y: auto;
   margin: ${({ theme: { spacing } }) => spacing["400"]};

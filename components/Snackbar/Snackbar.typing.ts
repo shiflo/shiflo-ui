@@ -8,6 +8,7 @@ export interface SnackbarProps extends ComponentPropsWithRef<"div">, UtilityProp
   transitionDuration?: number;
   startIcon?: ReactNode;
   action?: ReactNode;
+  maxWidth?: string;
   autoHideDuration?: number;
   disableAutoHide?: boolean;
 }

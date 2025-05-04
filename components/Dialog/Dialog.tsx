@@ -11,6 +11,7 @@ function Dialog({
   transitionDuration = 200,
   onClick,
   style,
+  maxWidth = "375px",
   ...props
 }: DialogProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,6 +55,7 @@ function Dialog({
       <StyledDialog
         ease={open ? "in" : "out"}
         transitionDuration={transitionDuration}
+        maxWidth={maxWidth}
         onClick={handleClick}
         {...props}
         style={{

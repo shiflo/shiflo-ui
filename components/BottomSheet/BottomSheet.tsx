@@ -13,6 +13,7 @@ function BottomSheet({
   onClose,
   children,
   transitionDuration = 200,
+  maxWidth = "375px",
   onClick,
   ref,
   hideDragHandleBar,
@@ -189,6 +190,7 @@ function BottomSheet({
         !hideOverlay
           ? undefined
           : {
+              pointerEvents: "none",
               backgroundColor: "transparent !important"
             }
       }
@@ -197,6 +199,7 @@ function BottomSheet({
         ref={sheetRef}
         ease={open ? "in" : "out"}
         transitionDuration={transitionDuration}
+        maxWidth={maxWidth}
         onClick={handleClick}
         {...props}
         style={{

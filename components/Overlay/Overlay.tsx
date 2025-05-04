@@ -1,4 +1,11 @@
-import { useEffect, useImperativeHandle, useLayoutEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useImperativeHandle,
+  useLayoutEffect,
+  useRef,
+  useState,
+  MouseEvent
+} from "react";
 import { createPortal } from "react-dom";
 
 import { StyledOverlay, OverlayWrapper, OverlayContent } from "@components/Overlay/Overlay.styles";
@@ -12,12 +19,18 @@ function Overlay({
   placement,
   style,
   ref,
+  onClick,
   ...props
 }: OverlayProps) {
   const [isUnmounted, setIsUnmounted] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
   const overlayRef = useRef<HTMLDivElement>(null);
+
+  const handleClick = (e: MouseEvent<HTMLDivElement>) => {
+    onClose?.();
+    onClick?.(e);
+  };
 
   useImperativeHandle(ref, () => overlayRef.current as HTMLDivElement);
 
@@ -64,11 +77,12 @@ function Overlay({
   }
 
   return createPortal(
-    <OverlayWrapper onClick={onClose}>
+    <OverlayWrapper>
       <StyledOverlay
         ref={overlayRef}
         transitionDuration={transitionDuration}
         ease={open ? "in" : "out"}
+        onClick={handleClick}
         style={{
           opacity: isOpen ? 1 : 0,
           ...style

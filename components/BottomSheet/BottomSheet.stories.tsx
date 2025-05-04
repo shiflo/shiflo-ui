@@ -18,7 +18,8 @@ export const Default: Story = {
     onClose: () => {},
     transitionDuration: 200,
     hideDragHandleBar: false,
-    hideOverlay: true
+    hideOverlay: true,
+    maxWidth: "375px"
   },
   render: (args: BottomSheetProps) => {
     const [isOpen, setIsOpen] = useState(args.open);

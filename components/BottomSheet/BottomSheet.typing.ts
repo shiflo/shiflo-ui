@@ -5,6 +5,7 @@ export interface BottomSheetProps extends ComponentPropsWithRef<"div">, Pick<Uti
   open?: boolean;
   onClose?: () => void;
   transitionDuration?: number;
+  maxWidth?: string;
   hideDragHandleBar?: boolean;
   hideOverlay?: boolean;
 }

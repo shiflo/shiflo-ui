@@ -3,7 +3,7 @@ import styled from "basic-styled";
 import { SnackbarProps } from "@components/Snackbar/Snackbar.typing";
 
 export const StyledSnackbar = styled.div<
-  Pick<SnackbarProps, "transitionDuration"> & {
+  Pick<SnackbarProps, "transitionDuration" | "maxWidth"> & {
     ease: "in" | "out";
   }
 >`
@@ -14,8 +14,8 @@ export const StyledSnackbar = styled.div<
   display: flex;
   align-items: center;
   gap: ${({ theme: { spacing } }) => spacing["400"]};
-  width: 100%;
-  max-width: calc(100% - ${({ theme: { spacing } }) => spacing["800"]});
+  width: calc(100% - ${({ theme: { spacing } }) => spacing["800"]});
+  max-width: ${({ maxWidth = "375px" }) => maxWidth};
   min-height: 56px;
   padding: ${({ theme: { spacing } }) => spacing["400"]};
   background-color: ${({

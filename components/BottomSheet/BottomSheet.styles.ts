@@ -3,11 +3,12 @@ import styled from "basic-styled";
 import { BottomSheetProps } from "@components/BottomSheet/BottomSheet.typing";
 
 export const StyledBottomSheet = styled.div<
-  Pick<BottomSheetProps, "transitionDuration"> & {
+  Pick<BottomSheetProps, "maxWidth" | "transitionDuration"> & {
     ease: "in" | "out";
   }
 >`
-  width: 100%;
+  width: calc(100% - ${({ theme: { spacing } }) => spacing["800"]});
+  max-width: ${({ maxWidth = "375px" }) => maxWidth};
   max-height: calc(100% - ${({ theme: { spacing } }) => spacing["800"]});
   overflow-y: auto;
   margin: ${({ theme: { spacing } }) => spacing["400"]};

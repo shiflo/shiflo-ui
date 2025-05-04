@@ -20,6 +20,7 @@ function Snackbar({
   ref,
   startIcon,
   action,
+  maxWidth = "375px",
   autoHideDuration = 3000,
   disableAutoHide,
   ...props
@@ -93,6 +94,7 @@ function Snackbar({
       ref={snackbarRef}
       transitionDuration={transitionDuration}
       ease={open ? "in" : "out"}
+      maxWidth={maxWidth}
       style={{
         opacity: isOpen ? 1 : 0,
         transform: isOpen

@@ -16,4 +16,5 @@ export interface OverlayProps extends ComponentPropsWithRef<"div">, Pick<Utility
     | "center-middle"
     | "center-left"
     | "center-right";
+  hideOverlay?: boolean;
 }
