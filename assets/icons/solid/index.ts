@@ -9,3 +9,5 @@ export { default as PlusSolid } from "./plus-solid.svg";
 export { default as RotateRightSolid } from "./rotate-right-solid.svg";
 export { default as XmarkSolid } from "./xmark-solid.svg";
 export { default as CheckSolid } from "./check-solid.svg";
+export { default as TrashSolid } from "./trash-solid.svg";
+export { default as MinusSolid } from "./minus-solid.svg";
