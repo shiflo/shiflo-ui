@@ -18,7 +18,7 @@ export const Default: Story = {
     onClose: () => {},
     transitionDuration: 200,
     hideDragHandleBar: false,
-    hideOverlay: true,
+    hideOverlay: false,
     maxWidth: "375px"
   },
   render: (args: BottomSheetProps) => {
