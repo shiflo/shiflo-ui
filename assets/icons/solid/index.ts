@@ -11,3 +11,6 @@ export { default as XmarkSolid } from "./xmark-solid.svg";
 export { default as CheckSolid } from "./check-solid.svg";
 export { default as TrashSolid } from "./trash-solid.svg";
 export { default as MinusSolid } from "./minus-solid.svg";
+export { default as BriefcaseBlankSolid } from "./briefcase-blank-solid.svg";
+export { default as ChartSimpleHorizontalSolid } from "./chart-simple-horizontal-solid.svg";
+export { default as ClockDeskSolid } from "./clock-desk-solid.svg";
