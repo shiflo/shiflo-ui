@@ -1,6 +1,6 @@
 import Tag, { TagProps } from "@components/Tag";
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta<typeof Tag> = {
   component: Tag

@@ -13,7 +13,23 @@ function Button({
 }: ButtonProps) {
   if (variant === "text") {
     return (
-      <StyledButton ref={ref} variant={"text"} size={size} color={"secondary"} {...props}>
+      <StyledButton
+        ref={ref}
+        variant={"text"}
+        size={size}
+        color={"secondary"}
+        layout
+        whileHover={{
+          scale: 1.02
+        }}
+        whileTap={{ scale: 0.98 }}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 25
+        }}
+        {...props}
+      >
         {startIcon}
         {children}
         {endIcon}
@@ -23,7 +39,49 @@ function Button({
 
   if (variant === "ghost") {
     return (
-      <StyledButton ref={ref} variant={"ghost"} size={size} color={"primary"} {...props}>
+      <StyledButton
+        ref={ref}
+        variant={"ghost"}
+        size={size}
+        color={"primary"}
+        layout
+        whileHover={{
+          scale: 1.02
+        }}
+        whileTap={{ scale: 0.98 }}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 25
+        }}
+        {...props}
+      >
+        {startIcon}
+        {children}
+        {endIcon}
+      </StyledButton>
+    );
+  }
+
+  if (variant === "gradient") {
+    return (
+      <StyledButton
+        ref={ref}
+        variant={"gradient"}
+        size={size}
+        color={"primary"}
+        layout
+        whileHover={{
+          scale: 1.02
+        }}
+        whileTap={{ scale: 0.98 }}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 25
+        }}
+        {...props}
+      >
         {startIcon}
         {children}
         {endIcon}
@@ -32,7 +90,23 @@ function Button({
   }
 
   return (
-    <StyledButton ref={ref} variant={variant} size={size} color={color} {...props}>
+    <StyledButton
+      ref={ref}
+      variant={variant}
+      size={size}
+      color={color}
+      layout
+      whileHover={{
+        scale: 1.02
+      }}
+      whileTap={{ scale: 0.98 }}
+      transition={{
+        type: "spring",
+        stiffness: 400,
+        damping: 25
+      }}
+      {...props}
+    >
       {startIcon}
       {children}
       {endIcon}

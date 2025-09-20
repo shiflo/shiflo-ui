@@ -1,4 +1,4 @@
-import styled from "basic-styled";
+import styled from "@emotion/styled";
 
 import { BaseIconProps } from "@components/Icon/Icon.typing";
 import getValueByPath from "@utils/getValueByPath";

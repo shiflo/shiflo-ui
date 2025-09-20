@@ -1,8 +1,10 @@
-import styled from "basic-styled";
+import styled from "@emotion/styled";
+
+import { motion } from "motion/react";
 
 import { TextFieldProps } from "@components/TextField/TextField.typing";
 
-export const StyledTextField = styled.div<
+export const StyledTextField = styled(motion.div)<
   Pick<TextFieldProps, "variant" | "fullWidth" | "size" | "disabled"> & {
     focused: boolean;
   }
@@ -12,13 +14,7 @@ export const StyledTextField = styled.div<
   gap: ${({ theme: { spacing } }) => spacing["200"]};
   border: 1px solid transparent;
   border-radius: ${({ theme: { radius } }) => radius["200"]};
-  transition:
-    background-color 0.2s,
-    border-color 0.2s,
-    padding 0.2s,
-    font-size 0.2s,
-    font-weight 0.2s,
-    color 0.2s;
+  transition: all 0.2s;
   background-color: ${({
     theme: {
       palette: { common }
@@ -146,7 +142,7 @@ export const StyledTextField = styled.div<
       : {}};
 `;
 
-export const Input = styled.input`
+export const Input = styled(motion.input)`
   flex-grow: 1;
   border: none;
   outline: none;

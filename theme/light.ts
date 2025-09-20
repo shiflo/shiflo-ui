@@ -2,22 +2,36 @@ import radius from "@theme/radius";
 import spacing from "@theme/spacing";
 import typography from "@theme/typography";
 
-import type { BasicTheme } from "basic-styled";
+import type { ShifloTheme } from "@theme/typing";
 
-const light: BasicTheme = {
+const light: ShifloTheme = {
   mode: "light",
   palette: {
     primary: {
-      main: "#004ECC",
-      light: "#5A8BFF",
-      dark: "#003699",
-      hover: "#336DFF",
-      active: "#003699",
+      main: "#0066CC",
+      light: "#3399FF",
+      dark: "#004499",
+      hover: "#1A80E6",
+      active: "#004499",
+      glow: "#1A80E6",
       alpha: {
-        5: "rgba(0, 78, 204, 0.05)",
-        10: "rgba(0, 78, 204, 0.1)",
-        20: "rgba(0, 78, 204, 0.2)",
-        30: "rgba(0, 78, 204, 0.3)"
+        5: "rgba(0, 102, 204, 0.05)",
+        10: "rgba(0, 102, 204, 0.1)",
+        20: "rgba(0, 102, 204, 0.2)",
+        30: "rgba(0, 102, 204, 0.3)"
+      }
+    },
+    accent: {
+      main: "#3399FF",
+      light: "#66B3FF",
+      dark: "#0066CC",
+      hover: "#4DA6FF",
+      active: "#0066CC",
+      alpha: {
+        5: "rgba(51, 153, 255, 0.05)",
+        10: "rgba(51, 153, 255, 0.1)",
+        20: "rgba(51, 153, 255, 0.2)",
+        30: "rgba(51, 153, 255, 0.3)"
       }
     },
     secondary: {
@@ -78,6 +92,9 @@ const light: BasicTheme = {
       light: "#DEE2E6",
       main: "#ADB5BD",
       dark: "#6C757D"
+    },
+    gradient: {
+      primaryToAccent: "linear-gradient(135deg, hsl(225 100% 40%) 0%, hsl(225 100% 60%) 100%)"
     }
   },
   typography,

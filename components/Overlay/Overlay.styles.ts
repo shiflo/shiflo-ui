@@ -1,19 +1,17 @@
-import styled from "basic-styled";
+import styled from "@emotion/styled";
+
+import { motion } from "motion/react";
 
 import { OverlayProps } from "@components/Overlay/Overlay.typing";
 
-export const OverlayWrapper = styled.div`
+export const OverlayWrapper = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
 `;
 
-export const StyledOverlay = styled.div<
-  Pick<OverlayProps, "transitionDuration"> & {
-    ease: "in" | "out";
-  }
->`
+export const StyledOverlay = styled(motion.div)<Pick<OverlayProps, "transitionDuration">>`
   position: fixed;
   top: 0;
   left: 0;
@@ -24,13 +22,9 @@ export const StyledOverlay = styled.div<
       palette: { common }
     }
   }) => common.overlay};
-  transition:
-    opacity ${({ transitionDuration }) => `${transitionDuration}ms`}
-      ${({ ease }) => (ease === "in" ? "ease-in" : "ease-out")},
-    background-color 0.2s;
 `;
 
-export const OverlayContent = styled.div<Pick<OverlayProps, "placement">>`
+export const OverlayContent = styled(motion.div)<Pick<OverlayProps, "placement">>`
   position: fixed;
   width: 100%;
   display: flex;

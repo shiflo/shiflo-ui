@@ -1,16 +1,11 @@
-import styled from "basic-styled";
+import styled from "@emotion/styled";
 
 import { BaseBoxProps } from "@components/Box/Box.typing";
 import getUtilityProps from "@utils/getUtilityProps";
 import getValueByPath from "@utils/getValueByPath";
 
 export const StyledBox = styled.div<BaseBoxProps>`
-  transition:
-    background-color 0.2s,
-    border-width 0.2s,
-    border-radius 0.2s,
-    border-color 0.2s,
-    color 0.2s;
+  transition: all 0.2s;
 
   ${({ theme: { palette }, backgroundColor, borderColor, color, ...props }) => {
     const style = {};

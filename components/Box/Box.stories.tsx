@@ -7,7 +7,7 @@ import spacing from "@theme/spacing";
 
 import getObjectPaths from "@utils/getObjectPaths";
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta<typeof Box> = {
   component: Box,

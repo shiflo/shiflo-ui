@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 
 import Dialog, { DialogProps } from "@components/Dialog";
 
-import type { Meta, StoryObj } from "@storybook/react";
+import FPSMonitor from "@components/FPSMonitor";
+
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta<typeof Dialog> = {
   component: Dialog
@@ -16,7 +18,7 @@ export const Default: Story = {
     children: "Dialog",
     open: true,
     onClose: () => {},
-    transitionDuration: 200,
+    transitionDuration: 0.2,
     maxWidth: "375px"
   },
   render: (args: DialogProps) => {
@@ -32,6 +34,34 @@ export const Default: Story = {
       <Dialog {...args} open={isOpen} onClose={handleClose}>
         {args.children}
       </Dialog>
+    );
+  }
+};
+
+export const Performance: Story = {
+  args: {
+    children: "Dialog",
+    open: true,
+    onClose: () => {},
+    transitionDuration: 0.2,
+    maxWidth: "375px"
+  },
+  render: (args: DialogProps) => {
+    const [isOpen, setIsOpen] = useState(args.open);
+
+    const handleClose = () => setIsOpen(false);
+
+    useEffect(() => {
+      setIsOpen(args.open);
+    }, [args.open]);
+
+    return (
+      <>
+        <Dialog {...args} open={isOpen} onClose={handleClose}>
+          {args.children}
+        </Dialog>
+        <FPSMonitor trigger={isOpen} duration={(args.transitionDuration ?? 0.2) * 1000} />
+      </>
     );
   }
 };

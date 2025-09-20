@@ -1,14 +1,14 @@
 import Button, { ButtonProps } from "@components/Button";
 import Icon from "@components/Icon";
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta<typeof Button> = {
   component: Button,
   argTypes: {
     variant: {
       control: "radio",
-      options: ["filled", "ghost", "text"]
+      options: ["filled", "ghost", "text", "gradient"]
     },
     size: {
       control: "radio",

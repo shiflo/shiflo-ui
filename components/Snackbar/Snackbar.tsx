@@ -15,7 +15,7 @@ function Snackbar({
   children,
   open,
   onClose,
-  transitionDuration = 200,
+  transitionDuration = 0.2,
   style,
   ref,
   startIcon,
@@ -93,14 +93,21 @@ function Snackbar({
     <StyledSnackbar
       ref={snackbarRef}
       transitionDuration={transitionDuration}
-      ease={open ? "in" : "out"}
       maxWidth={maxWidth}
-      style={{
-        opacity: isOpen ? 1 : 0,
-        transform: isOpen
-          ? "translate3d(-50%, 0, 0) scale(1)"
-          : "translate3d(-50%, 0, 0) scale(0.97)",
-        ...style
+      initial={{
+        x: "-50%",
+        scale: 0.97,
+        opacity: 0
+      }}
+      animate={{
+        x: "-50%",
+        scale: isOpen ? 1 : 0.97,
+        opacity: isOpen ? 1 : 0
+      }}
+      transition={{
+        type: "spring",
+        duration: transitionDuration,
+        damping: 10
       }}
       {...props}
     >

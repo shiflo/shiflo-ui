@@ -1,14 +1,14 @@
 import { ComponentPropsWithRef } from "react";
 
-import { RecursionPath, UtilityProps } from "@typings/utility";
+import { RecursionPath } from "@typings/utility";
 
 import type * as Svgs from "@assets/icons";
 
-import type { BasicTheme } from "basic-styled";
+import type { ShifloTheme } from "@theme/typing";
 
-export interface BaseIconProps extends Pick<UtilityProps, "css"> {
+export interface BaseIconProps {
   name: keyof typeof Svgs;
-  color?: RecursionPath<BasicTheme["palette"]> | "inherit";
+  color?: RecursionPath<ShifloTheme["palette"]> | "inherit";
   width?: number;
   height?: number;
 }

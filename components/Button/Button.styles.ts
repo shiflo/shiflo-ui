@@ -1,44 +1,33 @@
-import styled from "basic-styled";
+import styled from "@emotion/styled";
+
+import { motion } from "motion/react";
 
 import {
   BaseButtonProps,
   FilledButtonProps,
   GhostButtonProps,
+  GradientButtonProps,
   TextButtonProps
 } from "@components/Button/Button.typing";
 
-export const StyledButton = styled.button<
-  BaseButtonProps & (FilledButtonProps | GhostButtonProps | TextButtonProps)
+export const StyledButton = styled(motion.button)<
+  BaseButtonProps & (FilledButtonProps | GhostButtonProps | TextButtonProps | GradientButtonProps)
 >`
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: ${({ theme: { spacing } }) => spacing["100"]};
   font-weight: 500;
-  transition:
-    transform 0.2s ease-out,
-    background-color 0.2s,
-    padding 0.2s,
-    font-size 0.2s,
-    font-weight 0.2s,
-    border-width 0.2s,
-    border-radius 0.2s,
-    border-color 0.2s,
-    color 0.2s;
-  border: 1px solid transparent;
+  transition: all 0.2s;
 
-  ${({
-    theme: {
+  ${({ theme, variant, size, color }) => {
+    const {
       mode,
-      palette: { primary, secondary, neutral },
+      palette: { primary, secondary, neutral, gradient },
       typography: { body1, body2, small1, small2 },
       spacing,
       radius
-    },
-    variant,
-    size,
-    color
-  }) => {
+    } = theme;
     const style = {};
 
     switch (variant) {
@@ -55,7 +44,6 @@ export const StyledButton = styled.button<
             }
           },
           "&:active": {
-            transform: "scale(0.9)",
             backgroundColor: primary.alpha["30"]
           },
           "&:disabled": {
@@ -78,7 +66,6 @@ export const StyledButton = styled.button<
             }
           },
           "&:active": {
-            transform: "scale(0.9)",
             backgroundColor: neutral["300"]
           },
           "&:disabled": {
@@ -86,6 +73,30 @@ export const StyledButton = styled.button<
             backgroundColor: "transparent",
             cursor: "not-allowed",
             textDecoration: "none"
+          }
+        });
+        break;
+      case "gradient":
+        Object.assign(style, {
+          background: gradient.primaryToAccent,
+          color: mode === "dark" ? neutral["900"] : secondary.main,
+          "& svg": {
+            color: mode === "dark" ? neutral["900"] : secondary.main
+          },
+          "@media (hover: hover)": {
+            "&:hover": {
+              background: gradient.primaryToAccent
+            }
+          },
+          "&:active": {
+            background: gradient.primaryToAccent,
+            boxShadow: `inset 0 0 0 100px ${primary.dark}`
+          },
+          "&:disabled": {
+            background: neutral["200"],
+            color: neutral["500"],
+            cursor: "not-allowed",
+            boxShadow: "none"
           }
         });
         break;
@@ -103,7 +114,6 @@ export const StyledButton = styled.button<
               }
             },
             "&:active": {
-              transform: "scale(0.9)",
               backgroundColor: secondary.dark
             },
             "&:disabled": {
@@ -127,7 +137,6 @@ export const StyledButton = styled.button<
             }
           },
           "&:active": {
-            transform: "scale(0.9)",
             backgroundColor: primary.active
           },
           "&:disabled": {

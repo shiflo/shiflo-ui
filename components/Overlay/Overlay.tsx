@@ -8,20 +8,26 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 
-import { StyledOverlay, OverlayWrapper, OverlayContent } from "@components/Overlay/Overlay.styles";
+import { useTheme } from "@emotion/react";
+
+import { OverlayWrapper, StyledOverlay, OverlayContent } from "@components/Overlay/Overlay.styles";
 import { OverlayProps } from "@components/Overlay/Overlay.typing";
 
 function Overlay({
   children,
   open,
   onClose,
-  transitionDuration = 200,
+  transitionDuration = 0.2,
   placement,
-  style,
   ref,
   onClick,
+  hideOverlay,
   ...props
 }: OverlayProps) {
+  const {
+    palette: { common }
+  } = useTheme();
+
   const [isUnmounted, setIsUnmounted] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -80,13 +86,16 @@ function Overlay({
     <OverlayWrapper>
       <StyledOverlay
         ref={overlayRef}
-        transitionDuration={transitionDuration}
-        ease={open ? "in" : "out"}
-        onClick={handleClick}
-        style={{
+        initial={{ opacity: 0 }}
+        animate={{
           opacity: isOpen ? 1 : 0,
-          ...style
+          backgroundColor: hideOverlay ? "rgba(0, 0, 0, 0)" : common.overlay
         }}
+        transition={{
+          duration: transitionDuration,
+          ease: open ? "easeIn" : "easeOut"
+        }}
+        onClick={handleClick}
         {...props}
       />
       <OverlayContent placement={placement}>{children}</OverlayContent>

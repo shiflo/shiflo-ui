@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import Switch, { SwitchProps } from "@components/Switch";
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta<typeof Switch> = {
   component: Switch,

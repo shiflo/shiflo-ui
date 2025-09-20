@@ -2,9 +2,9 @@ import radius from "@theme/radius";
 import spacing from "@theme/spacing";
 import typography from "@theme/typography";
 
-import type { BasicTheme } from "basic-styled";
+import type { ShifloTheme } from "@theme/typing";
 
-const dark: BasicTheme = {
+const dark: ShifloTheme = {
   mode: "dark",
   palette: {
     primary: {
@@ -13,11 +13,25 @@ const dark: BasicTheme = {
       dark: "#004ECC",
       hover: "#7EAFFF",
       active: "#336DFF",
+      glow: "#1A80E6",
       alpha: {
         5: "rgba(90, 139, 255, 0.05)",
         10: "rgba(90, 139, 255, 0.1)",
         20: "rgba(90, 139, 255, 0.2)",
         30: "rgba(90, 139, 255, 0.3)"
+      }
+    },
+    accent: {
+      main: "#3399FF",
+      light: "#66B3FF",
+      dark: "#0066CC",
+      hover: "#4DA6FF",
+      active: "#0066CC",
+      alpha: {
+        5: "rgba(51, 153, 255, 0.05)",
+        10: "rgba(51, 153, 255, 0.1)",
+        20: "rgba(51, 153, 255, 0.2)",
+        30: "rgba(51, 153, 255, 0.3)"
       }
     },
     secondary: {
@@ -78,6 +92,9 @@ const dark: BasicTheme = {
       light: "#52565D",
       main: "#6C757D",
       dark: "#A5ACB3"
+    },
+    gradient: {
+      primaryToAccent: "linear-gradient(135deg, #5A8BFF 0%, hsl(225 100% 60%) 100%)"
     }
   },
   typography,

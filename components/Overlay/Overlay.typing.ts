@@ -1,8 +1,6 @@
-import { ComponentPropsWithRef } from "react";
+import { HTMLMotionProps } from "motion/react";
 
-import { UtilityProps } from "@typings/utility";
-
-export interface OverlayProps extends ComponentPropsWithRef<"div">, Pick<UtilityProps, "css"> {
+export interface OverlayProps extends HTMLMotionProps<"div"> {
   open?: boolean;
   onClose?: () => void;
   transitionDuration?: number;

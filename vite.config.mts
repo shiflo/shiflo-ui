@@ -12,15 +12,11 @@ const inputs = ["assets", "components", "theme", "typings", "utils"];
 export default defineConfig({
   build: {
     lib: {
-      entry: inputs
-    },
-    rollupOptions: {
-      external: [/react/g, /react-dom/g, /basic-styled/g],
-      input: Object.fromEntries(
+      entry: Object.fromEntries(
         inputs
           .map((input) =>
             glob
-              .sync(`${input}/**/*.{ts,tsx}`, {
+              .sync([`${input}/**/*.{ts,tsx}`], {
                 ignore: [
                   "**/*.d.ts",
                   "**/*.styles.{ts,tsx}",
@@ -37,7 +33,18 @@ export default defineConfig({
               ])
           )
           .flat()
-      ),
+      )
+    },
+    rollupOptions: {
+      external: [
+        /react/g,
+        /^react\/.*/,
+        /react-dom/g,
+        /react-dom\/.*/,
+        /@emotion\/.*/,
+        /motion/g,
+        /motion\/.*/
+      ],
       output: [
         {
           interop: "auto",

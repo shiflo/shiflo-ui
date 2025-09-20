@@ -3,13 +3,13 @@ import { ReactNode, ElementType } from "react";
 import { PolymorphicComponentProps } from "@typings/component";
 import { UtilityProps, RecursionPath } from "@typings/utility";
 
-import type { BasicTheme } from "basic-styled";
+import type { ShifloTheme } from "@theme/typing";
 
 export interface BaseTypographyProps extends UtilityProps {
-  variant?: keyof BasicTheme["typography"];
+  variant?: keyof ShifloTheme["typography"];
   fontWeight?: 400 | 500 | 700;
-  color?: RecursionPath<BasicTheme["palette"]> | "inherit";
-  borderColor?: RecursionPath<BasicTheme["palette"]>;
+  color?: RecursionPath<ShifloTheme["palette"]> | "inherit";
+  borderColor?: RecursionPath<ShifloTheme["palette"]>;
   textAlign?: "left" | "center" | "right";
   noWrap?: boolean;
   lineClamp?: number;

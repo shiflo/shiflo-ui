@@ -1,9 +1,8 @@
-import styled from "basic-styled";
+import styled from "@emotion/styled";
+import { motion } from "motion/react";
 
-export const StyledTag = styled.span`
-  transition:
-    background-color 0.2s,
-    color 0.2s;
+export const StyledTag = styled(motion.span)`
+  transition: all 0.2s;
   cursor: default;
 
   padding: ${({ theme: { spacing } }) => spacing["100"]};

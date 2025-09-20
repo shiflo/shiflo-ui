@@ -1,6 +1,7 @@
-import { ComponentPropsWithRef, ReactNode } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
-import { UtilityProps } from "@typings/utility";
+import type { UtilityProps } from "@typings/utility";
+import type { HTMLMotionProps } from "motion/react";
 
 export interface BaseButtonProps extends Pick<UtilityProps, "css"> {
   size?: "xSmall" | "small" | "medium" | "large";
@@ -23,5 +24,15 @@ export interface TextButtonProps extends BaseButtonProps {
   color?: "secondary";
 }
 
-export type ButtonProps = (FilledButtonProps | GhostButtonProps | TextButtonProps) &
-  ComponentPropsWithRef<"button">;
+export interface GradientButtonProps extends BaseButtonProps {
+  variant?: "gradient";
+  color?: "primary";
+}
+
+export type ButtonProps = (
+  | FilledButtonProps
+  | GhostButtonProps
+  | TextButtonProps
+  | GradientButtonProps
+) &
+  PropsWithChildren<HTMLMotionProps<"button">>;

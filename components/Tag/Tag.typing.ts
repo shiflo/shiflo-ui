@@ -1,7 +1,5 @@
-import { ComponentPropsWithRef } from "react";
+import { HTMLMotionProps } from "motion/react";
 
-import { UtilityProps } from "@typings/utility";
-
-export interface TagProps extends ComponentPropsWithRef<"span">, Pick<UtilityProps, "css"> {
+export interface TagProps extends HTMLMotionProps<"span"> {
   color?: "primary" | "warning" | "error" | "info" | "success";
 }

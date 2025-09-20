@@ -86,7 +86,7 @@ export default function getUtilityProps<T>({
   }
 
   if (mb) {
-    Object.assign(style, { marginRight: spacing[mb] });
+    Object.assign(style, { marginBottom: spacing[mb] });
   }
 
   if (ml) {

@@ -1,7 +1,8 @@
-import { CSS } from "basic-styled/core/typing";
-
 import radius from "@theme/radius";
 import spacing from "@theme/spacing";
+
+import type { Interpolation } from "@emotion/serialize";
+import type { ShifloTheme } from "@theme/typing";
 
 import type { Properties } from "csstype";
 
@@ -30,7 +31,7 @@ export type UtilityProps = Partial<
     > &
     Record<"br" | "brtl" | "brtr" | "brml" | "brmr", keyof typeof radius>
 > & {
-  css?: CSS;
+  css?: Interpolation<ShifloTheme>;
 };
 
 export type RecursionPath<T, Prefix extends string = ""> = Exclude<

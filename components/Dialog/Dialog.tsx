@@ -8,7 +8,7 @@ function Dialog({
   open,
   onClose,
   children,
-  transitionDuration = 200,
+  transitionDuration = 0.2,
   onClick,
   style,
   maxWidth = "375px",
@@ -53,16 +53,23 @@ function Dialog({
       placement={"center-middle"}
     >
       <StyledDialog
-        ease={open ? "in" : "out"}
         transitionDuration={transitionDuration}
         maxWidth={maxWidth}
         onClick={handleClick}
-        {...props}
-        style={{
-          transform: `scale(${isOpen ? 1 : 0.9})`,
-          opacity: isOpen ? 1 : 0,
-          ...style
+        initial={{
+          scale: 0.9,
+          opacity: 0
         }}
+        animate={{
+          scale: isOpen ? 1 : 0.9,
+          opacity: isOpen ? 1 : 0
+        }}
+        transition={{
+          type: "spring",
+          duration: transitionDuration,
+          damping: 10
+        }}
+        {...props}
       >
         {children}
       </StyledDialog>

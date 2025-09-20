@@ -1,10 +1,8 @@
-import { ComponentPropsWithRef, MouseEvent } from "react";
+import { MouseEvent } from "react";
 
-import { UtilityProps } from "@typings/utility";
+import { HTMLMotionProps } from "motion/react";
 
-export interface SwitchProps
-  extends Omit<ComponentPropsWithRef<"button">, "onChange">,
-    Pick<UtilityProps, "css"> {
+export interface SwitchProps extends Omit<HTMLMotionProps<"button">, "onChange"> {
   checked?: boolean;
   disabled?: boolean;
   size?: "small" | "medium" | "large";
