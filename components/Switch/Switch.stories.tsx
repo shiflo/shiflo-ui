@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
-import Switch, { SwitchProps } from "@components/Switch";
+import Switch from "@components/Switch";
+
+import type { SwitchProps } from "@components/Switch";
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 

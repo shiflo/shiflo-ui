@@ -1,4 +1,4 @@
-import Box, { BoxProps } from "@components/Box";
+import Box from "@components/Box";
 import light from "@theme/light";
 
 import radius from "@theme/radius";
@@ -6,6 +6,8 @@ import radius from "@theme/radius";
 import spacing from "@theme/spacing";
 
 import getObjectPaths from "@utils/getObjectPaths";
+
+import type { BoxProps } from "@components/Box";
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 

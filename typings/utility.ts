@@ -1,7 +1,7 @@
-import radius from "@theme/radius";
-import spacing from "@theme/spacing";
-
 import type { Interpolation } from "@emotion/serialize";
+import type radius from "@theme/radius";
+import type spacing from "@theme/spacing";
+
 import type { ShifloTheme } from "@theme/typing";
 
 import type { Properties } from "csstype";

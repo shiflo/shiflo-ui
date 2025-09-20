@@ -1,5 +1,7 @@
-import Button, { ButtonProps } from "@components/Button";
+import Button from "@components/Button";
 import Icon from "@components/Icon";
+
+import type { ButtonProps } from "@components/Button";
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 

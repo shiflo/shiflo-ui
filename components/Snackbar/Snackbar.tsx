@@ -9,7 +9,7 @@ import {
   Action
 } from "@components/Snackbar/Snackbar.styles";
 
-import { SnackbarProps } from "@components/Snackbar/Snackbar.typing";
+import type { SnackbarProps } from "@components/Snackbar/Snackbar.typing";
 
 function Snackbar({
   children,

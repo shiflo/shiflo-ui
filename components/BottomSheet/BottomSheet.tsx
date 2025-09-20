@@ -1,14 +1,16 @@
-import { useEffect, useState, useImperativeHandle, useRef, MouseEvent } from "react";
-
-import { PanInfo } from "motion/react";
+import type { MouseEvent } from "react";
+import { useEffect, useState, useImperativeHandle, useRef } from "react";
 
 import {
   StyledBottomSheet,
   DragHandleBarWrapper,
   DragHandleBar
 } from "@components/BottomSheet/BottomSheet.styles";
-import { BottomSheetProps } from "@components/BottomSheet/BottomSheet.typing";
+
 import Overlay from "@components/Overlay/Overlay";
+
+import type { BottomSheetProps } from "@components/BottomSheet/BottomSheet.typing";
+import type { PanInfo } from "motion/react";
 
 function BottomSheet({
   open,

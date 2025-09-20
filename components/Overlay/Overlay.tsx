@@ -1,17 +1,12 @@
-import {
-  useEffect,
-  useImperativeHandle,
-  useLayoutEffect,
-  useRef,
-  useState,
-  MouseEvent
-} from "react";
+import type { MouseEvent } from "react";
+import { useEffect, useImperativeHandle, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 import { useTheme } from "@emotion/react";
 
 import { OverlayWrapper, StyledOverlay, OverlayContent } from "@components/Overlay/Overlay.styles";
-import { OverlayProps } from "@components/Overlay/Overlay.typing";
+
+import type { OverlayProps } from "@components/Overlay/Overlay.typing";
 
 function Overlay({
   children,

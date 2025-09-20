@@ -3,7 +3,10 @@ import { useState, useEffect } from "react";
 import Button from "@components/Button";
 import FPSMonitor from "@components/FPSMonitor";
 import Icon from "@components/Icon";
-import Snackbar, { SnackbarProps } from "@components/Snackbar";
+
+import Snackbar from "@components/Snackbar";
+
+import type { SnackbarProps } from "@components/Snackbar";
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 

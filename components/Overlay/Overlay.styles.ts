@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 import { motion } from "motion/react";
 
-import { OverlayProps } from "@components/Overlay/Overlay.typing";
+import type { OverlayProps } from "@components/Overlay/Overlay.typing";
 
 export const OverlayWrapper = styled(motion.div)`
   position: fixed;

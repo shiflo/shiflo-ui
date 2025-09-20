@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "motion/react";
 
-import { SnackbarProps } from "@components/Snackbar/Snackbar.typing";
+import type { SnackbarProps } from "@components/Snackbar/Snackbar.typing";
 
 export const StyledSnackbar = styled(motion.div)<
   Pick<SnackbarProps, "transitionDuration" | "maxWidth">

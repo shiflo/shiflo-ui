@@ -1,5 +1,6 @@
 import { StyledButton } from "@components/Button/Button.styles";
-import { ButtonProps } from "@components/Button/Button.typing";
+
+import type { ButtonProps } from "@components/Button/Button.typing";
 
 function Button({
   ref,

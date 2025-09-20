@@ -1,10 +1,12 @@
-import Typography, { TypographyProps } from "@components/Typography";
+import Typography from "@components/Typography";
 import light from "@theme/light";
 
 import radius from "@theme/radius";
 import spacing from "@theme/spacing";
 
 import getObjectPaths from "@utils/getObjectPaths";
+
+import type { TypographyProps } from "@components/Typography";
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 

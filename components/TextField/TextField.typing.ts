@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
-import { HTMLMotionProps } from "motion/react";
+import type { HTMLMotionProps } from "motion/react";
 
 export interface TextFieldProps extends Omit<HTMLMotionProps<"input">, "size"> {
   variant?: "contained" | "outlined";

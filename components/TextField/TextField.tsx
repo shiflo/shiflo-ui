@@ -1,7 +1,9 @@
-import { useState, FocusEvent } from "react";
+import type { FocusEvent } from "react";
+import { useState } from "react";
 
 import { StyledTextField, Input, StartIcon, EndIcon } from "@components/TextField/TextField.styles";
-import { TextFieldProps } from "@components/TextField/TextField.typing";
+
+import type { TextFieldProps } from "@components/TextField/TextField.typing";
 
 function TextField({
   variant = "outlined",

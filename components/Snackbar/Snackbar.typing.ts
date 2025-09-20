@@ -1,6 +1,6 @@
-import { ReactNode, PropsWithChildren } from "react";
+import type { ReactNode, PropsWithChildren } from "react";
 
-import { HTMLMotionProps } from "motion/react";
+import type { HTMLMotionProps } from "motion/react";
 
 export interface SnackbarProps extends PropsWithChildren<HTMLMotionProps<"div">> {
   open?: boolean;

@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactNode } from "react";
+import type { PropsWithChildren, ReactNode } from "react";
 
 import type { UtilityProps } from "@typings/utility";
 import type { HTMLMotionProps } from "motion/react";

@@ -1,6 +1,6 @@
-import { MouseEvent } from "react";
+import type { MouseEvent } from "react";
 
-import { HTMLMotionProps } from "motion/react";
+import type { HTMLMotionProps } from "motion/react";
 
 export interface SwitchProps extends Omit<HTMLMotionProps<"button">, "onChange"> {
   checked?: boolean;

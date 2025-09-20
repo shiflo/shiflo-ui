@@ -1,9 +1,11 @@
 import * as Svgs from "@assets/icons";
 
-import Icon, { IconProps } from "@components/Icon";
+import Icon from "@components/Icon";
 import light from "@theme/light";
 
 import getObjectPaths from "@utils/getObjectPaths";
+
+import type { IconProps } from "@components/Icon";
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 

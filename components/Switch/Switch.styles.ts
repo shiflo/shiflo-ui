@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "motion/react";
 
-import { SwitchProps } from "@components/Switch/Switch.typing";
+import type { SwitchProps } from "@components/Switch/Switch.typing";
 
 export const StyledSwitch = styled(motion.button)<
   Pick<SwitchProps, "checked" | "disabled" | "size">

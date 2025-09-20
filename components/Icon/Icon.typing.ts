@@ -1,10 +1,9 @@
-import { ComponentPropsWithRef } from "react";
-
-import { RecursionPath } from "@typings/utility";
+import type { ComponentPropsWithRef } from "react";
 
 import type * as Svgs from "@assets/icons";
 
 import type { ShifloTheme } from "@theme/typing";
+import type { RecursionPath } from "@typings/utility";
 
 export interface BaseIconProps {
   name: keyof typeof Svgs;

@@ -1,6 +1,6 @@
 import Button from "@components/Button/Button";
 
-import { BaseButtonProps, ButtonProps } from "@components/Button/Button.typing";
+import type { BaseButtonProps, ButtonProps } from "@components/Button/Button.typing";
 
 export type { BaseButtonProps, ButtonProps };
 

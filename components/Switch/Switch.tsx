@@ -1,7 +1,8 @@
-import { MouseEvent } from "react";
+import type { MouseEvent } from "react";
 
 import { StyledSwitch, StyledSwitchThumb } from "@components/Switch/Switch.styles";
-import { SwitchProps } from "@components/Switch/Switch.typing";
+
+import type { SwitchProps } from "@components/Switch/Switch.typing";
 
 function Switch({
   checked = false,

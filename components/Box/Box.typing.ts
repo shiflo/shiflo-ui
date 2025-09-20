@@ -1,9 +1,8 @@
-import { ElementType, ReactNode } from "react";
-
-import { PolymorphicComponentProps } from "@typings/component";
-import { RecursionPath, UtilityProps } from "@typings/utility";
+import type { ElementType, ReactNode } from "react";
 
 import type { ShifloTheme } from "@theme/typing";
+import type { PolymorphicComponentProps } from "@typings/component";
+import type { RecursionPath, UtilityProps } from "@typings/utility";
 
 export interface BaseBoxProps extends UtilityProps {
   backgroundColor?: RecursionPath<ShifloTheme["palette"]>;

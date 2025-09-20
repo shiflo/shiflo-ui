@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 
 import FPSMonitor from "@components/FPSMonitor";
-import Overlay, { OverlayProps } from "@components/Overlay";
+
+import Overlay from "@components/Overlay";
+
+import type { OverlayProps } from "@components/Overlay";
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 

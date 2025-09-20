@@ -62,7 +62,9 @@ export default defineConfig({
     }
   },
   plugins: [
-    react(),
+    react({
+      jsxImportSource: "@emotion/react"
+    }),
     dts({
       beforeWriteFile: (filePath, content) => {
         return {

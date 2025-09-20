@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 
-import { BaseBoxProps } from "@components/Box/Box.typing";
 import getUtilityProps from "@utils/getUtilityProps";
 import getValueByPath from "@utils/getValueByPath";
+
+import type { BaseBoxProps } from "@components/Box/Box.typing";
 
 export const StyledBox = styled.div<BaseBoxProps>`
   transition: all 0.2s;

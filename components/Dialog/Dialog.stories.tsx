@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 
-import Dialog, { DialogProps } from "@components/Dialog";
+import Dialog from "@components/Dialog";
 
 import FPSMonitor from "@components/FPSMonitor";
+
+import type { DialogProps } from "@components/Dialog";
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 

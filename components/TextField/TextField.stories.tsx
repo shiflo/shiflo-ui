@@ -1,5 +1,8 @@
 import Icon from "@components/Icon";
-import TextField, { TextFieldProps } from "@components/TextField";
+
+import TextField from "@components/TextField";
+
+import type { TextFieldProps } from "@components/TextField";
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 

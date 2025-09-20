@@ -1,6 +1,6 @@
 import Switch from "@components/Switch/Switch";
 
-import { SwitchProps } from "@components/Switch/Switch.typing";
+import type { SwitchProps } from "@components/Switch/Switch.typing";
 
 export type { SwitchProps };
 

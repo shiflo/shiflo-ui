@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 import { motion } from "motion/react";
 
-import {
+import type {
   BaseButtonProps,
   FilledButtonProps,
   GhostButtonProps,

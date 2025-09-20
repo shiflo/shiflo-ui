@@ -78,7 +78,14 @@ export default [
           ignoreRestSiblings: true
         }
       ],
-      "@typescript-eslint/no-empty-object-type": "off"
+      "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        {
+          prefer: "type-imports",
+          disallowTypeAnnotations: false
+        }
+      ]
     },
     settings: {
       react: {

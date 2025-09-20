@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
 
-import { BaseIconProps } from "@components/Icon/Icon.typing";
 import getValueByPath from "@utils/getValueByPath";
+
+import type { BaseIconProps } from "@components/Icon/Icon.typing";
 
 export const StyledIcon = styled.svg<BaseIconProps>`
   transition:

@@ -4,8 +4,11 @@ import { useTheme } from "@emotion/react";
 import { motion, AnimatePresence } from "motion/react";
 
 import Box from "@components/Box";
-import { FPSChecker, FPSMetrics } from "@components/FPSMonitor/FPSTMonitor.utils";
+
+import { FPSChecker } from "@components/FPSMonitor/FPSMonitor.utils";
 import Typography from "@components/Typography";
+
+import type { FPSMetrics } from "@components/FPSMonitor/FPSMonitor.utils";
 
 export interface FPSMonitorProps {
   trigger?: boolean;

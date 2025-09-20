@@ -1,5 +1,6 @@
 import { StyledTag } from "@components/Tag/Tag.styles";
-import { TagProps } from "@components/Tag/Tag.typing";
+
+import type { TagProps } from "@components/Tag/Tag.typing";
 
 function Tag(props: TagProps) {
   return <StyledTag {...props} />;

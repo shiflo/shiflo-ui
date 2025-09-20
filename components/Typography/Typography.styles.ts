@@ -2,9 +2,10 @@ import styled from "@emotion/styled";
 
 import { motion } from "motion/react";
 
-import { BaseTypographyProps } from "@components/Typography/Typography.typing";
 import getUtilityProps from "@utils/getUtilityProps";
 import getValueByPath from "@utils/getValueByPath";
+
+import type { BaseTypographyProps } from "@components/Typography/Typography.typing";
 
 export const StyledTypography = styled(motion.div)<BaseTypographyProps>`
   transition: all 0.2s;

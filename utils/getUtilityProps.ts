@@ -1,6 +1,7 @@
 import radius from "@theme/radius";
 import spacing from "@theme/spacing";
-import { UtilityProps } from "@typings/utility";
+
+import type { UtilityProps } from "@typings/utility";
 
 export default function getUtilityProps<T>({
   display,

@@ -1,8 +1,7 @@
-import { PropsWithChildren } from "react";
-
-import { HTMLMotionProps } from "motion/react";
+import type { PropsWithChildren } from "react";
 
 import type { UtilityProps } from "@typings/utility";
+import type { HTMLMotionProps } from "motion/react";
 
 export interface BottomSheetProps
   extends PropsWithChildren<HTMLMotionProps<"div"> & Pick<UtilityProps, "css">> {

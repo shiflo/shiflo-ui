@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "motion/react";
 
-import { DialogProps } from "@components/Dialog/Dialog.typing";
+import type { DialogProps } from "@components/Dialog/Dialog.typing";
 
 export const StyledDialog = styled(motion.div)<
   Pick<DialogProps, "transitionDuration" | "maxWidth">

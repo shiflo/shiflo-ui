@@ -1,8 +1,11 @@
-import { useEffect, useState, useRef, MouseEvent } from "react";
+import type { MouseEvent } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { StyledDialog } from "@components/Dialog/Dialog.styles";
-import { DialogProps } from "@components/Dialog/Dialog.typing";
+
 import Overlay from "@components/Overlay/Overlay";
+
+import type { DialogProps } from "@components/Dialog/Dialog.typing";
 
 function Dialog({
   open,

@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 
-import BottomSheet, { BottomSheetProps } from "@components/BottomSheet";
+import BottomSheet from "@components/BottomSheet";
 
 import FPSMonitor from "@components/FPSMonitor";
+
+import type { BottomSheetProps } from "@components/BottomSheet";
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 

@@ -1,9 +1,8 @@
-import { ReactNode, ElementType } from "react";
-
-import { PolymorphicComponentProps } from "@typings/component";
-import { UtilityProps, RecursionPath } from "@typings/utility";
+import type { ReactNode, ElementType } from "react";
 
 import type { ShifloTheme } from "@theme/typing";
+import type { PolymorphicComponentProps } from "@typings/component";
+import type { UtilityProps, RecursionPath } from "@typings/utility";
 
 export interface BaseTypographyProps extends UtilityProps {
   variant?: keyof ShifloTheme["typography"];

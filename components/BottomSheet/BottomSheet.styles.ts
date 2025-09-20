@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "motion/react";
 
-import { BottomSheetProps } from "@components/BottomSheet/BottomSheet.typing";
+import type { BottomSheetProps } from "@components/BottomSheet/BottomSheet.typing";
 
 export const StyledBottomSheet = styled(motion.div)<Pick<BottomSheetProps, "maxWidth">>`
   width: calc(100% - ${({ theme: { spacing } }) => spacing["800"]});

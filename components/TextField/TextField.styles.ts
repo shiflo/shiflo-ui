@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 import { motion } from "motion/react";
 
-import { TextFieldProps } from "@components/TextField/TextField.typing";
+import type { TextFieldProps } from "@components/TextField/TextField.typing";
 
 export const StyledTextField = styled(motion.div)<
   Pick<TextFieldProps, "variant" | "fullWidth" | "size" | "disabled"> & {

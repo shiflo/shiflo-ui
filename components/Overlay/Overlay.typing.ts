@@ -1,4 +1,4 @@
-import { HTMLMotionProps } from "motion/react";
+import type { HTMLMotionProps } from "motion/react";
 
 export interface OverlayProps extends HTMLMotionProps<"div"> {
   open?: boolean;
