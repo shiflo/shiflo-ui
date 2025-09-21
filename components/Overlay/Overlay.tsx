@@ -1,5 +1,5 @@
 import type { MouseEvent } from "react";
-import { useEffect, useImperativeHandle, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 import { useTheme } from "@emotion/react";
@@ -26,16 +26,18 @@ function Overlay({
   const [isUnmounted, setIsUnmounted] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
-  const overlayRef = useRef<HTMLDivElement>(null);
-
   const handleClick = (e: MouseEvent<HTMLDivElement>) => {
     onClose?.();
     onClick?.(e);
   };
 
-  useImperativeHandle(ref, () => overlayRef.current as HTMLDivElement);
+  const handleAnimationComplete = () => {
+    if (open) return;
 
-  useLayoutEffect(() => {
+    setIsUnmounted(true);
+  };
+
+  useEffect(() => {
     let rafId: number | undefined;
 
     if (open) {
@@ -55,24 +57,6 @@ function Overlay({
     };
   }, [open, transitionDuration]);
 
-  useEffect(() => {
-    const overlayElement = overlayRef.current;
-
-    const handleTransitionEnd = (e: globalThis.TransitionEvent) => {
-      if (open) return;
-
-      if (e.propertyName === "opacity") {
-        setIsUnmounted(true);
-      }
-    };
-
-    overlayElement?.addEventListener("transitionend", handleTransitionEnd);
-
-    return () => {
-      overlayElement?.removeEventListener("transitionend", handleTransitionEnd);
-    };
-  }, [open]);
-
   if (isUnmounted) {
     return null;
   }
@@ -80,16 +64,17 @@ function Overlay({
   return createPortal(
     <OverlayWrapper>
       <StyledOverlay
-        ref={overlayRef}
         initial={{ opacity: 0 }}
         animate={{
           opacity: isOpen ? 1 : 0,
           backgroundColor: hideOverlay ? "rgba(0, 0, 0, 0)" : common.overlay
         }}
         transition={{
+          type: "spring",
           duration: transitionDuration,
-          ease: open ? "easeIn" : "easeOut"
+          bounce: 0.2
         }}
+        onAnimationComplete={handleAnimationComplete}
         onClick={handleClick}
         {...props}
       />

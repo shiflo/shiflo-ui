@@ -1,4 +1,4 @@
-import { useEffect, useImperativeHandle, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { createPortal } from "react-dom";
 
@@ -28,12 +28,9 @@ function Snackbar({
   const [isUnmounted, setIsUnmounted] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
-  const snackbarRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
 
-  useImperativeHandle(ref, () => snackbarRef.current as HTMLDivElement);
-
-  useLayoutEffect(() => {
+  useEffect(() => {
     let rafId: number | undefined;
 
     if (open) {
@@ -53,23 +50,11 @@ function Snackbar({
     };
   }, [open, transitionDuration]);
 
-  useEffect(() => {
-    const snackbarElement = snackbarRef.current;
+  const handleAnimationComplete = () => {
+    if (open) return;
 
-    const handleTransitionEnd = (e: globalThis.TransitionEvent) => {
-      if (open) return;
-
-      if (e.propertyName === "opacity") {
-        setIsUnmounted(true);
-      }
-    };
-
-    snackbarElement?.addEventListener("transitionend", handleTransitionEnd);
-
-    return () => {
-      snackbarElement?.removeEventListener("transitionend", handleTransitionEnd);
-    };
-  }, [open]);
+    setIsUnmounted(true);
+  };
 
   useEffect(() => {
     if (disableAutoHide || !isOpen) return;
@@ -91,9 +76,9 @@ function Snackbar({
 
   return createPortal(
     <StyledSnackbar
-      ref={snackbarRef}
       transitionDuration={transitionDuration}
       maxWidth={maxWidth}
+      onAnimationComplete={handleAnimationComplete}
       initial={{
         x: "-50%",
         scale: 0.97,
@@ -107,7 +92,7 @@ function Snackbar({
       transition={{
         type: "spring",
         duration: transitionDuration,
-        damping: 10
+        bounce: 0.2
       }}
       {...props}
     >

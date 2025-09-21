@@ -1,5 +1,5 @@
 import type { MouseEvent } from "react";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import { StyledDialog } from "@components/Dialog/Dialog.styles";
 
@@ -18,8 +18,6 @@ function Dialog({
   ...props
 }: DialogProps) {
   const [isOpen, setIsOpen] = useState(false);
-
-  const overlayRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
@@ -49,7 +47,6 @@ function Dialog({
 
   return (
     <Overlay
-      ref={overlayRef}
       open={open}
       onClose={onClose}
       transitionDuration={transitionDuration}
@@ -70,7 +67,7 @@ function Dialog({
         transition={{
           type: "spring",
           duration: transitionDuration,
-          damping: 10
+          bounce: 0.2
         }}
         {...props}
       >

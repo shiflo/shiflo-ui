@@ -98,7 +98,7 @@ function BottomSheet({
         transition={{
           type: "spring",
           duration: transitionDuration,
-          damping: 10
+          bounce: 0.2
         }}
         style={style}
         {...props}

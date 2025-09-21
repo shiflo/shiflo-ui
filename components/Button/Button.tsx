@@ -26,8 +26,8 @@ function Button({
         whileTap={{ scale: 0.98 }}
         transition={{
           type: "spring",
-          stiffness: 400,
-          damping: 25
+          duration: 0.2,
+          bounce: 0.2
         }}
         {...props}
       >
@@ -52,8 +52,8 @@ function Button({
         whileTap={{ scale: 0.98 }}
         transition={{
           type: "spring",
-          stiffness: 400,
-          damping: 25
+          duration: 0.2,
+          bounce: 0.2
         }}
         {...props}
       >
@@ -78,8 +78,8 @@ function Button({
         whileTap={{ scale: 0.98 }}
         transition={{
           type: "spring",
-          stiffness: 400,
-          damping: 25
+          duration: 0.2,
+          bounce: 0.2
         }}
         {...props}
       >
@@ -103,8 +103,8 @@ function Button({
       whileTap={{ scale: 0.98 }}
       transition={{
         type: "spring",
-        stiffness: 400,
-        damping: 25
+        duration: 0.2,
+        bounce: 0.2
       }}
       {...props}
     >
