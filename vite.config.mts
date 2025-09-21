@@ -24,7 +24,9 @@ export default defineConfig({
                   "**/typing.ts",
                   "**/*.typing.ts",
                   "typings/utility.ts",
-                  "typings/component.ts"
+                  "typings/component.ts",
+                  "components/FPSMonitor/*.ts",
+                  "components/FPSMonitor/*.tsx"
                 ]
               })
               .map((file) => [

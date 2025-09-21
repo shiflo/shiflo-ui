@@ -17,11 +17,6 @@ export const StyledOverlay = styled(motion.div)<Pick<OverlayProps, "transitionDu
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: ${({
-    theme: {
-      palette: { common }
-    }
-  }) => common.overlay};
 `;
 
 export const OverlayContent = styled(motion.div)<Pick<OverlayProps, "placement">>`

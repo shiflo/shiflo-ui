@@ -64,7 +64,7 @@ function Overlay({
   return createPortal(
     <OverlayWrapper>
       <StyledOverlay
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 0, backgroundColor: hideOverlay ? "rgba(0, 0, 0, 0)" : common.overlay }}
         animate={{
           opacity: isOpen ? 1 : 0,
           backgroundColor: hideOverlay ? "rgba(0, 0, 0, 0)" : common.overlay
