@@ -94,7 +94,6 @@ function BottomSheet({
         animate={{
           y: isOpen ? 0 : "200%"
         }}
-        exit={{ y: "200%" }}
         transition={{
           type: "spring",
           duration: transitionDuration,

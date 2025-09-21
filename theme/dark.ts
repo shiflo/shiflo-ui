@@ -81,7 +81,7 @@ const dark: ShifloTheme = {
     common: {
       background: "#22252A",
       surface: "#30333A",
-      overlay: "rgba(0, 0, 0, 0.7)"
+      overlay: "rgba(0, 0, 0, 0.3)"
     },
     text: {
       primary: "#EAECEF",

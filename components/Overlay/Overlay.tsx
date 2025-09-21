@@ -77,6 +77,10 @@ function Overlay({
         onAnimationComplete={handleAnimationComplete}
         onClick={handleClick}
         {...props}
+        style={{
+          pointerEvents: hideOverlay ? "none" : undefined,
+          ...props.style
+        }}
       />
       <OverlayContent placement={placement}>{children}</OverlayContent>
     </OverlayWrapper>,

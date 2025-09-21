@@ -81,7 +81,7 @@ const light: ShifloTheme = {
     common: {
       background: "#FFFFFF",
       surface: "#FFFFFF",
-      overlay: "rgba(0, 0, 0, 0.5)"
+      overlay: "rgba(0, 0, 0, 0.3)"
     },
     text: {
       primary: "#212529",
