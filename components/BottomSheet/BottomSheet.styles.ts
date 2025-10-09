@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { motion } from "motion/react";
 
-import type { BottomSheetProps } from "@components/BottomSheet/BottomSheet.typing";
+import type { BottomSheetProps } from "@components/BottomSheet";
 
 export const StyledBottomSheet = styled(motion.div)<Pick<BottomSheetProps, "maxWidth">>`
   width: calc(100% - ${({ theme: { spacing } }) => spacing["800"]});
@@ -33,7 +33,7 @@ export const DragHandleBarWrapper = styled.div`
       palette: { common }
     }
   }) => common.background};
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
 `;
 
 export const DragHandleBar = styled.div`
@@ -45,5 +45,5 @@ export const DragHandleBar = styled.div`
       palette: { border }
     }
   }) => border.main};
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
 `;

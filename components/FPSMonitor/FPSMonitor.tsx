@@ -137,7 +137,7 @@ function FPSMonitor({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.3 }}
           >
             <Box mb="600">
               <Typography
@@ -237,7 +237,7 @@ function FPSMonitor({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.3 }}
             style={{
               width: "100%",
               marginTop: spacing["600"],

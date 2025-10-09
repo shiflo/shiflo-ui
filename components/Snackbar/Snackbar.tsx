@@ -15,7 +15,7 @@ function Snackbar({
   children,
   open,
   onClose,
-  transitionDuration = 0.2,
+  transitionDuration = 0.3,
   style,
   ref,
   startIcon,

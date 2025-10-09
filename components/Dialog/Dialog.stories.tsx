@@ -20,7 +20,7 @@ export const Default: Story = {
     children: "Dialog",
     open: true,
     onClose: () => {},
-    transitionDuration: 0.2,
+    transitionDuration: 0.3,
     maxWidth: "375px"
   },
   render: (args: DialogProps) => {
@@ -45,7 +45,7 @@ export const Performance: Story = {
     children: "Dialog",
     open: true,
     onClose: () => {},
-    transitionDuration: 0.2,
+    transitionDuration: 0.3,
     maxWidth: "375px"
   },
   render: (args: DialogProps) => {
@@ -62,7 +62,7 @@ export const Performance: Story = {
         <Dialog {...args} open={isOpen} onClose={handleClose}>
           {args.children}
         </Dialog>
-        <FPSMonitor trigger={isOpen} duration={(args.transitionDuration ?? 0.2) * 1000} />
+        <FPSMonitor trigger={isOpen} duration={(args.transitionDuration ?? 0.3) * 1000} />
       </>
     );
   }

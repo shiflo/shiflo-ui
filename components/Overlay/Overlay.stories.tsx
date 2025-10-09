@@ -39,7 +39,7 @@ export const Default: Story = {
   args: {
     open: true,
     onClose: () => {},
-    transitionDuration: 0.2,
+    transitionDuration: 0.3,
     placement: "top-left"
   },
   render: (args: OverlayProps) => {
@@ -59,7 +59,7 @@ export const Performance: Story = {
   args: {
     open: true,
     onClose: () => {},
-    transitionDuration: 0.2,
+    transitionDuration: 0.3,
     placement: "top-left"
   },
   render: (args: OverlayProps) => {
@@ -74,7 +74,7 @@ export const Performance: Story = {
     return (
       <>
         <Overlay {...args} open={isOpen} onClose={handleClose} />
-        <FPSMonitor trigger={isOpen} duration={(args.transitionDuration ?? 0.2) * 1000} />
+        <FPSMonitor trigger={isOpen} duration={(args.transitionDuration ?? 0.3) * 1000} />
       </>
     );
   }

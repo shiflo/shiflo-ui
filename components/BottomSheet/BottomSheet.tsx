@@ -1,22 +1,18 @@
 import type { MouseEvent } from "react";
 import { useEffect, useState, useImperativeHandle, useRef } from "react";
 
-import {
-  StyledBottomSheet,
-  DragHandleBarWrapper,
-  DragHandleBar
-} from "@components/BottomSheet/BottomSheet.styles";
-
 import Overlay from "@components/Overlay/Overlay";
 
-import type { BottomSheetProps } from "@components/BottomSheet/BottomSheet.typing";
+import { StyledBottomSheet, DragHandleBarWrapper, DragHandleBar } from "./BottomSheet.styles";
+
+import type { BottomSheetProps } from "@components/BottomSheet";
 import type { PanInfo } from "motion/react";
 
 function BottomSheet({
   open,
   onClose,
   children,
-  transitionDuration = 0.2,
+  transitionDuration = 0.3,
   maxWidth = "375px",
   onClick,
   ref,
@@ -85,7 +81,7 @@ function BottomSheet({
         ref={sheetRef}
         drag="y"
         dragConstraints={{ top: 0, bottom: 0 }}
-        dragElastic={{ top: 0, bottom: 0.2 }}
+        dragElastic={{ top: 0, bottom: 0.3 }}
         dragMomentum={false}
         onDragEnd={handleDragEnd}
         maxWidth={maxWidth}

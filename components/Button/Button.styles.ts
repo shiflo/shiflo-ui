@@ -18,7 +18,7 @@ export const StyledButton = styled(motion.button)<
   justify-content: center;
   gap: ${({ theme: { spacing } }) => spacing["100"]};
   font-weight: 500;
-  transition: all 0.2s;
+  transition: all 0.3s;
 
   ${({ theme, variant, size, color }) => {
     const {

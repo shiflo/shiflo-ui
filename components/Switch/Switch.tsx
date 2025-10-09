@@ -28,7 +28,6 @@ function Switch({
       checked={checked}
       disabled={disabled}
       onClick={handleClick}
-      layout
       style={{
         justifyContent: checked ? "flex-end" : "flex-start"
       }}

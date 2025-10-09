@@ -37,7 +37,6 @@ function TextField({
       focused={isFocused}
       fullWidth={fullWidth}
       disabled={disabled}
-      layout
     >
       {startIcon && <StartIcon>{startIcon}</StartIcon>}
       <Input {...props} onFocus={handleFocus} onBlur={handleBlur} disabled={disabled} />

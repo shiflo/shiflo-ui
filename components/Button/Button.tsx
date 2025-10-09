@@ -1,6 +1,6 @@
-import { StyledButton } from "@components/Button/Button.styles";
+import { StyledButton } from "./Button.styles";
 
-import type { ButtonProps } from "@components/Button/Button.typing";
+import type { ButtonProps } from "./Button.typing";
 
 function Button({
   ref,
@@ -19,14 +19,13 @@ function Button({
         variant={"text"}
         size={size}
         color={"secondary"}
-        layout
         whileHover={{
           scale: 1.02
         }}
         whileTap={{ scale: 0.98 }}
         transition={{
           type: "spring",
-          duration: 0.2,
+          duration: 0.3,
           bounce: 0.2
         }}
         {...props}
@@ -45,14 +44,13 @@ function Button({
         variant={"ghost"}
         size={size}
         color={"primary"}
-        layout
         whileHover={{
           scale: 1.02
         }}
         whileTap={{ scale: 0.98 }}
         transition={{
           type: "spring",
-          duration: 0.2,
+          duration: 0.3,
           bounce: 0.2
         }}
         {...props}
@@ -71,14 +69,13 @@ function Button({
         variant={"gradient"}
         size={size}
         color={"primary"}
-        layout
         whileHover={{
           scale: 1.02
         }}
         whileTap={{ scale: 0.98 }}
         transition={{
           type: "spring",
-          duration: 0.2,
+          duration: 0.3,
           bounce: 0.2
         }}
         {...props}
@@ -96,14 +93,13 @@ function Button({
       variant={variant}
       size={size}
       color={color}
-      layout
       whileHover={{
         scale: 1.02
       }}
       whileTap={{ scale: 0.98 }}
       transition={{
         type: "spring",
-        duration: 0.2,
+        duration: 0.3,
         bounce: 0.2
       }}
       {...props}

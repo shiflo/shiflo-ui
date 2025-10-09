@@ -14,7 +14,7 @@ export const StyledTextField = styled(motion.div)<
   gap: ${({ theme: { spacing } }) => spacing["200"]};
   border: 1px solid transparent;
   border-radius: ${({ theme: { radius } }) => radius["200"]};
-  transition: all 0.2s;
+  transition: all 0.3s;
   background-color: ${({
     theme: {
       palette: { common }

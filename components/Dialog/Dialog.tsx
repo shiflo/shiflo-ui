@@ -11,7 +11,7 @@ function Dialog({
   open,
   onClose,
   children,
-  transitionDuration = 0.2,
+  transitionDuration = 0.3,
   onClick,
   style,
   maxWidth = "375px",

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { motion } from "motion/react";
 
 export const StyledTag = styled(motion.span)`
-  transition: all 0.2s;
+  transition: all 0.3s;
   cursor: default;
 
   padding: ${({ theme: { spacing } }) => spacing["100"]};

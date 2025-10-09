@@ -11,7 +11,7 @@ export const StyledSwitch = styled(motion.button)<
   align-items: center;
   padding: 0 ${({ theme: { spacing } }) => spacing["100"]};
   border-radius: 9999px;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
   cursor: pointer;
 
   ${({ theme: { palette }, checked, disabled, size }) => {

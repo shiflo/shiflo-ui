@@ -8,7 +8,7 @@ import getValueByPath from "@utils/getValueByPath";
 import type { BaseTypographyProps } from "@components/Typography/Typography.typing";
 
 export const StyledTypography = styled(motion.div)<BaseTypographyProps>`
-  transition: all 0.2s;
+  transition: all 0.3s;
 
   ${({ theme: { typography, palette }, variant, color, fontWeight, borderColor, ...props }) => {
     const { fontSize, lineHeight } = typography[variant || "body2"];
@@ -54,8 +54,8 @@ export const StyledTypography = styled(motion.div)<BaseTypographyProps>`
       ? {
           display: "-webkit-box",
           overflow: "hidden",
-          "-webkit-line-clamp": lineClamp,
-          "-webkit-box-orient": "vertical"
+          WebkitLineClamp: lineClamp,
+          WebkitBoxOrient: "vertical"
         }
       : {}};
 `;

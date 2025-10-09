@@ -6,9 +6,9 @@ import type { BaseIconProps } from "@components/Icon/Icon.typing";
 
 export const StyledIcon = styled.svg<BaseIconProps>`
   transition:
-    width 0.2s,
-    height 0.2s,
-    color 0.2s;
+    width 0.3s,
+    height 0.3s,
+    color 0.3s;
 
   width: ${({ width }) => `${width || 24}px`};
   height: ${({ height }) => `${height || 24}px`};
