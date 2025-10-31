@@ -1,59 +1,24 @@
 import styled from "@emotion/styled";
 import { motion } from "motion/react";
 
-export const StyledTag = styled(motion.span)`
+import getValueByPath from "@utils/getValueByPath";
+
+import type { TagProps } from "@components/Tag/Tag.typing";
+
+export const StyledTag = styled(motion.span)<Pick<TagProps, "color" | "textColor">>`
   transition: all 0.3s;
   cursor: default;
 
   padding: ${({ theme: { spacing } }) => spacing["100"]};
   border-radius: ${({ theme: { radius } }) => radius["200"]};
 
-  ${({
-    theme: {
-      mode,
-      palette: {
-        primary,
-        secondary,
-        text,
-        feedback: { warning, error, info, success }
-      }
-    },
-    color
-  }) => {
+  ${({ theme: { palette }, color, textColor }) => {
     const style = {};
 
-    switch (color) {
-      case "warning":
-        Object.assign(style, {
-          backgroundColor: warning.main,
-          color: mode === "dark" ? secondary.main : text.primary
-        });
-        break;
-      case "error":
-        Object.assign(style, {
-          backgroundColor: error.main,
-          color: mode === "dark" ? secondary.main : text.primary
-        });
-        break;
-      case "info":
-        Object.assign(style, {
-          backgroundColor: info.main,
-          color: mode === "dark" ? secondary.main : text.primary
-        });
-        break;
-      case "success":
-        Object.assign(style, {
-          backgroundColor: success.main,
-          color: mode === "dark" ? secondary.main : text.primary
-        });
-        break;
-      default:
-        Object.assign(style, {
-          backgroundColor: primary.main,
-          color: secondary.main
-        });
-        break;
-    }
+    Object.assign(style, {
+      backgroundColor: getValueByPath(palette, color) || "inherit",
+      color: getValueByPath(palette, textColor) || "inherit"
+    });
 
     return style;
   }}
