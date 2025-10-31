@@ -11,4 +11,5 @@ export interface SnackbarProps extends PropsWithChildren<HTMLMotionProps<"div">>
   maxWidth?: string;
   autoHideDuration?: number;
   disableAutoHide?: boolean;
+  bottom?: string;
 }

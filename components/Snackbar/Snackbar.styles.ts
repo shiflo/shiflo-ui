@@ -4,12 +4,12 @@ import { motion } from "motion/react";
 import type { SnackbarProps } from "@components/Snackbar/Snackbar.typing";
 
 export const StyledSnackbar = styled(motion.div)<
-  Pick<SnackbarProps, "transitionDuration" | "maxWidth">
+  Pick<SnackbarProps, "transitionDuration" | "maxWidth" | "bottom">
 >`
   position: fixed;
   left: 50%;
-  bottom: ${({ theme: { spacing } }) =>
-    `calc(${spacing["800"]} + var(--safe-area-inset-bottom, 0px))`};
+  bottom: ${({ theme: { spacing }, bottom }) =>
+    `calc(${bottom || spacing["800"]} + var(--safe-area-inset-bottom, 0px))`};
   display: flex;
   align-items: center;
   gap: ${({ theme: { spacing } }) => spacing["400"]};

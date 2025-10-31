@@ -35,6 +35,11 @@ export const Default: Story = {
     disableAutoHide: false,
     maxWidth: "375px"
   },
+  argTypes: {
+    bottom: {
+      control: "text"
+    }
+  },
   render: (args: SnackbarProps) => {
     const [isOpen, setIsOpen] = useState(args.open);
 
