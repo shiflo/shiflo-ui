@@ -13,7 +13,7 @@ export const StyledDialog = styled(motion.div)<
   margin: ${({ theme: { spacing } }) => spacing["400"]};
   margin-bottom: ${({ theme: { spacing } }) =>
     `calc(${spacing["400"]} + var(--safe-area-inset-bottom, 0px))`};
-  border-radius: ${({ theme: { radius } }) => radius["150"]};
+  border-radius: ${({ theme: { radius } }) => radius["350"]};
   background-color: ${({
     theme: {
       palette: { common }
