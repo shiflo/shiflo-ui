@@ -59,23 +59,23 @@ const light: ShifloTheme = {
     feedback: {
       success: {
         light: "#C7EFC8",
-        main: "#A3D9A5",
-        dark: "#6CBF73"
+        main: "#6CBF73",
+        dark: "#4A9D52"
       },
       warning: {
         light: "#FFF2C2",
-        main: "#FFE59A",
-        dark: "#E5C67C"
+        main: "#E5C67C",
+        dark: "#B89A4F"
       },
       error: {
         light: "#FBC7C7",
-        main: "#F5A3A3",
-        dark: "#D67C7C"
+        main: "#D67C7C",
+        dark: "#B85C5C"
       },
       info: {
         light: "#C7E0FA",
-        main: "#A3CFF5",
-        dark: "#74A8DD"
+        main: "#74A8DD",
+        dark: "#5C8AB8"
       }
     },
     common: {
