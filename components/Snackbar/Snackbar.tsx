@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useImperativeHandle, useLayoutEffect, useRef, useState } from "react";
 
 import { createPortal } from "react-dom";
 
@@ -15,7 +15,7 @@ function Snackbar({
   children,
   open,
   onClose,
-  transitionDuration = 0.3,
+  transitionDuration = 200,
   style,
   ref,
   startIcon,
@@ -28,9 +28,12 @@ function Snackbar({
   const [isUnmounted, setIsUnmounted] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
+  const snackbarRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
 
-  useEffect(() => {
+  useImperativeHandle(ref, () => snackbarRef.current as HTMLDivElement);
+
+  useLayoutEffect(() => {
     let rafId: number | undefined;
 
     if (open) {
@@ -50,11 +53,23 @@ function Snackbar({
     };
   }, [open, transitionDuration]);
 
-  const handleAnimationComplete = () => {
-    if (open) return;
+  useEffect(() => {
+    const snackbarElement = snackbarRef.current;
 
-    setIsUnmounted(true);
-  };
+    const handleTransitionEnd = (e: globalThis.TransitionEvent) => {
+      if (open) return;
+
+      if (e.propertyName === "opacity") {
+        setIsUnmounted(true);
+      }
+    };
+
+    snackbarElement?.addEventListener("transitionend", handleTransitionEnd);
+
+    return () => {
+      snackbarElement?.removeEventListener("transitionend", handleTransitionEnd);
+    };
+  }, [open]);
 
   useEffect(() => {
     if (disableAutoHide || !isOpen) return;
@@ -76,23 +91,16 @@ function Snackbar({
 
   return createPortal(
     <StyledSnackbar
+      ref={snackbarRef}
       transitionDuration={transitionDuration}
+      ease={open ? "in" : "out"}
       maxWidth={maxWidth}
-      onAnimationComplete={handleAnimationComplete}
-      initial={{
-        x: "-50%",
-        scale: 0.97,
-        opacity: 0
-      }}
-      animate={{
-        x: "-50%",
-        scale: isOpen ? 1 : 0.97,
-        opacity: isOpen ? 1 : 0
-      }}
-      transition={{
-        type: "spring",
-        duration: transitionDuration,
-        bounce: 0.2
+      style={{
+        opacity: isOpen ? 1 : 0,
+        transform: isOpen
+          ? "translate3d(-50%, 0, 0) scale(1)"
+          : "translate3d(-50%, 0, 0) scale(0.97)",
+        ...style
       }}
       {...props}
     >

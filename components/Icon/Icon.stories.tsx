@@ -28,7 +28,7 @@ type Story = StoryObj<typeof Icon>;
 
 export const Default: Story = {
   args: {
-    name: "CalendarsSolid",
+    name: "CalendarLine",
     width: 24,
     height: 24,
     color: "primary.main"

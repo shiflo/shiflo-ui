@@ -1,9 +1,12 @@
 import styled from "@emotion/styled";
-import { motion } from "motion/react";
 
-import type { BottomSheetProps } from "@components/BottomSheet";
+import type { BottomSheetProps } from "@components/BottomSheet/BottomSheet.typing";
 
-export const StyledBottomSheet = styled(motion.div)<Pick<BottomSheetProps, "maxWidth">>`
+export const StyledBottomSheet = styled.div<
+  Pick<BottomSheetProps, "maxWidth" | "transitionDuration"> & {
+    ease: "in" | "out";
+  }
+>`
   width: calc(100% - ${({ theme: { spacing } }) => spacing["800"]});
   max-width: ${({ maxWidth = "375px" }) => maxWidth};
   max-height: calc(100% - ${({ theme: { spacing } }) => spacing["800"]});
@@ -17,6 +20,10 @@ export const StyledBottomSheet = styled(motion.div)<Pick<BottomSheetProps, "maxW
       palette: { common }
     }
   }) => common.background};
+  transition:
+    transform ${({ transitionDuration }) => `${transitionDuration}ms`}
+      ${({ ease }) => (ease === "in" ? "ease-out" : "ease-in")},
+    background-color 0.2s;
 `;
 
 export const DragHandleBarWrapper = styled.div`
@@ -33,7 +40,7 @@ export const DragHandleBarWrapper = styled.div`
       palette: { common }
     }
   }) => common.background};
-  transition: background-color 0.3s;
+  transition: background-color 0.2s;
 `;
 
 export const DragHandleBar = styled.div`
@@ -45,5 +52,5 @@ export const DragHandleBar = styled.div`
       palette: { border }
     }
   }) => border.main};
-  transition: background-color 0.3s;
+  transition: background-color 0.2s;
 `;

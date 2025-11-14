@@ -1,9 +1,10 @@
+import type { ComponentPropsWithRef } from "react";
+
 import type { ShifloTheme } from "@theme/typing";
 
 import type { RecursionPath, UtilityProps } from "@typings/utility";
-import type { HTMLMotionProps } from "motion/react";
 
-export interface TagProps extends HTMLMotionProps<"span">, Pick<UtilityProps, "css"> {
+export interface TagProps extends ComponentPropsWithRef<"span">, Pick<UtilityProps, "css"> {
   color?: RecursionPath<ShifloTheme["palette"]> | "inherit";
   textColor?: RecursionPath<ShifloTheme["palette"]> | "inherit";
 }

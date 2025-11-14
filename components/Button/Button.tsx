@@ -14,22 +14,7 @@ function Button({
 }: ButtonProps) {
   if (variant === "text") {
     return (
-      <StyledButton
-        ref={ref}
-        variant={"text"}
-        size={size}
-        color={"secondary"}
-        whileHover={{
-          scale: 1.02
-        }}
-        whileTap={{ scale: 0.98 }}
-        transition={{
-          type: "spring",
-          duration: 0.3,
-          bounce: 0.2
-        }}
-        {...props}
-      >
+      <StyledButton ref={ref} variant={"text"} size={size} color={"secondary"} {...props}>
         {startIcon}
         {children}
         {endIcon}
@@ -39,22 +24,7 @@ function Button({
 
   if (variant === "ghost") {
     return (
-      <StyledButton
-        ref={ref}
-        variant={"ghost"}
-        size={size}
-        color={"primary"}
-        whileHover={{
-          scale: 1.02
-        }}
-        whileTap={{ scale: 0.98 }}
-        transition={{
-          type: "spring",
-          duration: 0.3,
-          bounce: 0.2
-        }}
-        {...props}
-      >
+      <StyledButton ref={ref} variant={"ghost"} size={size} color={"primary"} {...props}>
         {startIcon}
         {children}
         {endIcon}
@@ -64,22 +34,7 @@ function Button({
 
   if (variant === "gradient") {
     return (
-      <StyledButton
-        ref={ref}
-        variant={"gradient"}
-        size={size}
-        color={"primary"}
-        whileHover={{
-          scale: 1.02
-        }}
-        whileTap={{ scale: 0.98 }}
-        transition={{
-          type: "spring",
-          duration: 0.3,
-          bounce: 0.2
-        }}
-        {...props}
-      >
+      <StyledButton ref={ref} variant={"gradient"} size={size} color={"primary"} {...props}>
         {startIcon}
         {children}
         {endIcon}
@@ -88,22 +43,7 @@ function Button({
   }
 
   return (
-    <StyledButton
-      ref={ref}
-      variant={variant}
-      size={size}
-      color={color}
-      whileHover={{
-        scale: 1.02
-      }}
-      whileTap={{ scale: 0.98 }}
-      transition={{
-        type: "spring",
-        duration: 0.3,
-        bounce: 0.2
-      }}
-      {...props}
-    >
+    <StyledButton ref={ref} variant={variant} size={size} color={color} {...props}>
       {startIcon}
       {children}
       {endIcon}

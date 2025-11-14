@@ -1,14 +1,12 @@
 import styled from "@emotion/styled";
 
-import { motion } from "motion/react";
-
 import getUtilityProps from "@utils/getUtilityProps";
 import getValueByPath from "@utils/getValueByPath";
 
 import type { BaseTypographyProps } from "@components/Typography/Typography.typing";
 
-export const StyledTypography = styled(motion.div)<BaseTypographyProps>`
-  transition: all 0.3s;
+export const StyledTypography = styled.div<BaseTypographyProps>`
+  transition: all 0.2s;
 
   ${({ theme: { typography, palette }, variant, color, fontWeight, borderColor, ...props }) => {
     const { fontSize, lineHeight } = typography[variant || "body2"];

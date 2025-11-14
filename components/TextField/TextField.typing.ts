@@ -1,10 +1,9 @@
-import type { ReactNode } from "react";
+import type { ComponentPropsWithRef, ReactNode } from "react";
 
 import type { UtilityProps } from "@typings/utility";
-import type { HTMLMotionProps } from "motion/react";
 
 export interface TextFieldProps
-  extends Omit<HTMLMotionProps<"input">, "size">,
+  extends Omit<ComponentPropsWithRef<"input">, "children" | "size">,
     Pick<UtilityProps, "css"> {
   variant?: "contained" | "outlined";
   startIcon?: ReactNode;

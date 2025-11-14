@@ -1,12 +1,11 @@
 import styled from "@emotion/styled";
-import { motion } from "motion/react";
 
 import getValueByPath from "@utils/getValueByPath";
 
 import type { TagProps } from "@components/Tag/Tag.typing";
 
-export const StyledTag = styled(motion.span)<Pick<TagProps, "color" | "textColor">>`
-  transition: all 0.3s;
+export const StyledTag = styled.span<Pick<TagProps, "color" | "textColor">>`
+  transition: all 0.2s;
   cursor: default;
 
   padding: ${({ theme: { spacing } }) => spacing["100"]};

@@ -1,5 +1,5 @@
 import type { MouseEvent } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { StyledDialog } from "@components/Dialog/Dialog.styles";
 
@@ -11,13 +11,15 @@ function Dialog({
   open,
   onClose,
   children,
-  transitionDuration = 0.3,
+  transitionDuration = 200,
   onClick,
   style,
   maxWidth = "375px",
   ...props
 }: DialogProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const overlayRef = useRef<HTMLDivElement>(null);
 
   const handleClick = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
@@ -47,29 +49,23 @@ function Dialog({
 
   return (
     <Overlay
+      ref={overlayRef}
       open={open}
       onClose={onClose}
       transitionDuration={transitionDuration}
       placement={"center-middle"}
     >
       <StyledDialog
+        ease={open ? "in" : "out"}
         transitionDuration={transitionDuration}
         maxWidth={maxWidth}
         onClick={handleClick}
-        initial={{
-          scale: 0.9,
-          opacity: 0
-        }}
-        animate={{
-          scale: isOpen ? 1 : 0.9,
-          opacity: isOpen ? 1 : 0
-        }}
-        transition={{
-          type: "spring",
-          duration: transitionDuration,
-          bounce: 0.2
-        }}
         {...props}
+        style={{
+          transform: `scale(${isOpen ? 1 : 0.9})`,
+          opacity: isOpen ? 1 : 0,
+          ...style
+        }}
       >
         {children}
       </StyledDialog>

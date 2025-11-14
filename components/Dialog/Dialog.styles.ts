@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
-import { motion } from "motion/react";
 
 import type { DialogProps } from "@components/Dialog/Dialog.typing";
 
-export const StyledDialog = styled(motion.div)<
-  Pick<DialogProps, "transitionDuration" | "maxWidth">
+export const StyledDialog = styled.div<
+  Pick<DialogProps, "transitionDuration" | "maxWidth"> & {
+    ease: "in" | "out";
+  }
 >`
   width: calc(100% - ${({ theme: { spacing } }) => spacing["800"]});
   max-width: ${({ maxWidth = "375px" }) => maxWidth};
@@ -19,4 +20,10 @@ export const StyledDialog = styled(motion.div)<
       palette: { common }
     }
   }) => common.background};
+  transition:
+    transform ${({ transitionDuration }) => `${transitionDuration}ms`}
+      ${({ ease }) => (ease === "in" ? "ease-out" : "ease-in")},
+    opacity ${({ transitionDuration }) => `${transitionDuration}ms`}
+      ${({ ease }) => (ease === "in" ? "ease-out" : "ease-in")},
+    background-color 0.2s;
 `;

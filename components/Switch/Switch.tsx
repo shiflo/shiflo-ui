@@ -1,6 +1,6 @@
 import type { MouseEvent } from "react";
 
-import { StyledSwitch, StyledSwitchThumb } from "@components/Switch/Switch.styles";
+import { StyledSwitch } from "@components/Switch/Switch.styles";
 
 import type { SwitchProps } from "@components/Switch/Switch.typing";
 
@@ -27,14 +27,10 @@ function Switch({
       size={size}
       checked={checked}
       disabled={disabled}
+      ease={checked ? "in" : "out"}
       onClick={handleClick}
-      style={{
-        justifyContent: checked ? "flex-end" : "flex-start"
-      }}
       {...props}
-    >
-      <StyledSwitchThumb layout size={size} />
-    </StyledSwitch>
+    />
   );
 }
 

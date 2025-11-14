@@ -1,15 +1,16 @@
 import styled from "@emotion/styled";
-import { motion } from "motion/react";
 
 import type { SnackbarProps } from "@components/Snackbar/Snackbar.typing";
 
-export const StyledSnackbar = styled(motion.div)<
-  Pick<SnackbarProps, "transitionDuration" | "maxWidth" | "bottom">
+export const StyledSnackbar = styled.div<
+  Pick<SnackbarProps, "transitionDuration" | "maxWidth" | "bottom"> & {
+    ease: "in" | "out";
+  }
 >`
   position: fixed;
-  left: 50%;
   bottom: ${({ theme: { spacing }, bottom }) =>
     `calc(${bottom || spacing["800"]} + var(--safe-area-inset-bottom, 0px))`};
+  left: 50%;
   display: flex;
   align-items: center;
   gap: ${({ theme: { spacing } }) => spacing["400"]};
@@ -24,6 +25,12 @@ export const StyledSnackbar = styled(motion.div)<
   }) => neutral["900"]};
   border-radius: ${({ theme: { radius } }) => radius["400"]};
   z-index: 1;
+
+  transition:
+    opacity ${({ transitionDuration }) => `${transitionDuration}ms`}
+      ${({ ease }) => (ease === "in" ? "ease-in" : "ease-out")},
+    transform ${({ transitionDuration }) => `${transitionDuration}ms`},
+    background-color 0.2s;
 `;
 
 export const StartAdornment = styled.div`

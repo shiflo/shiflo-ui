@@ -1,17 +1,15 @@
 import styled from "@emotion/styled";
-import { motion } from "motion/react";
 
 import type { SwitchProps } from "@components/Switch/Switch.typing";
 
-export const StyledSwitch = styled(motion.button)<
-  Pick<SwitchProps, "checked" | "disabled" | "size">
+export const StyledSwitch = styled.button<
+  Pick<SwitchProps, "checked" | "disabled" | "size"> & {
+    ease: "in" | "out";
+  }
 >`
   position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0 ${({ theme: { spacing } }) => spacing["100"]};
   border-radius: 9999px;
-  transition: background-color 0.3s;
+  transition: all 0.2s;
   cursor: pointer;
 
   ${({ theme: { palette }, checked, disabled, size }) => {
@@ -69,36 +67,29 @@ export const StyledSwitch = styled(motion.button)<
     return style;
   }};
 
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color: ${({
+      theme: {
+        palette: { common }
+      }
+    }) => common.background};
+    border-radius: 50%;
+    transition:
+      width 0.2s,
+      height 0.2s,
+      background-color 0.2s,
+      transform 0.2s ${({ ease }) => (ease === "in" ? "ease-in" : "ease-out")};
+    transform: ${({ theme: { spacing }, checked }) =>
+      checked
+        ? `translate3d(calc(100% + ${spacing["100"]}), -50%, 0)`
+        : `translate3d(${spacing["100"]}, -50%, 0)`};
+  }
+
   &:disabled {
     cursor: not-allowed;
   }
-`;
-
-export const StyledSwitchThumb = styled(motion.div)<Pick<SwitchProps, "size">>`
-  background-color: ${({
-    theme: {
-      palette: { common }
-    }
-  }) => common.background};
-  border-radius: 50%;
-
-  ${({ size }) => {
-    switch (size) {
-      case "small":
-        return {
-          width: "16px",
-          height: "16px"
-        };
-      case "large":
-        return {
-          width: "24px",
-          height: "24px"
-        };
-      default:
-        return {
-          width: "20px",
-          height: "20px"
-        };
-    }
-  }}
 `;

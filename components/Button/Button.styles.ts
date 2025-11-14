@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 
-import { motion } from "motion/react";
-
 import type {
   BaseButtonProps,
   FilledButtonProps,
@@ -10,7 +8,7 @@ import type {
   TextButtonProps
 } from "@components/Button/Button.typing";
 
-export const StyledButton = styled(motion.button)<
+export const StyledButton = styled.button<
   BaseButtonProps & (FilledButtonProps | GhostButtonProps | TextButtonProps | GradientButtonProps)
 >`
   display: inline-flex;
@@ -18,16 +16,21 @@ export const StyledButton = styled(motion.button)<
   justify-content: center;
   gap: ${({ theme: { spacing } }) => spacing["100"]};
   font-weight: 500;
-  transition: all 0.3s;
+  transition: all 0.2s;
+  border: 1px solid transparent;
 
-  ${({ theme, variant, size, color }) => {
-    const {
+  ${({
+    theme: {
       mode,
       palette: { primary, secondary, neutral, gradient },
       typography: { body1, body2, small1, small2 },
       spacing,
       radius
-    } = theme;
+    },
+    variant,
+    size,
+    color
+  }) => {
     const style = {};
 
     switch (variant) {
@@ -44,35 +47,13 @@ export const StyledButton = styled(motion.button)<
             }
           },
           "&:active": {
+            transform: "scale(0.9)",
             backgroundColor: primary.alpha["30"]
           },
           "&:disabled": {
             backgroundColor: mode === "dark" ? primary.alpha["10"] : primary.alpha["5"],
             color: neutral["500"],
             cursor: "not-allowed"
-          }
-        });
-        break;
-      case "text":
-        Object.assign(style, {
-          backgroundColor: "transparent",
-          color: mode === "dark" ? neutral["800"] : neutral["700"], // 기본 텍스트 색상 (더 강조된 중립색)
-          "& svg": {
-            color: mode === "dark" ? neutral["800"] : neutral["700"]
-          },
-          "@media (hover: hover)": {
-            "&:hover": {
-              backgroundColor: neutral["200"]
-            }
-          },
-          "&:active": {
-            backgroundColor: neutral["300"]
-          },
-          "&:disabled": {
-            color: neutral["500"],
-            backgroundColor: "transparent",
-            cursor: "not-allowed",
-            textDecoration: "none"
           }
         });
         break;
@@ -89,6 +70,7 @@ export const StyledButton = styled(motion.button)<
             }
           },
           "&:active": {
+            transform: "scale(0.9)",
             background: gradient.primaryToAccent,
             boxShadow: `inset 0 0 0 100px ${primary.dark}`
           },
@@ -97,6 +79,30 @@ export const StyledButton = styled(motion.button)<
             color: neutral["500"],
             cursor: "not-allowed",
             boxShadow: "none"
+          }
+        });
+        break;
+      case "text":
+        Object.assign(style, {
+          backgroundColor: "transparent",
+          color: mode === "dark" ? neutral["800"] : neutral["700"], // 기본 텍스트 색상 (더 강조된 중립색)
+          "& svg": {
+            color: mode === "dark" ? neutral["800"] : neutral["700"]
+          },
+          "@media (hover: hover)": {
+            "&:hover": {
+              backgroundColor: neutral["200"]
+            }
+          },
+          "&:active": {
+            transform: "scale(0.9)",
+            backgroundColor: neutral["300"]
+          },
+          "&:disabled": {
+            color: neutral["500"],
+            backgroundColor: "transparent",
+            cursor: "not-allowed",
+            textDecoration: "none"
           }
         });
         break;
@@ -114,6 +120,7 @@ export const StyledButton = styled(motion.button)<
               }
             },
             "&:active": {
+              transform: "scale(0.9)",
               backgroundColor: secondary.dark
             },
             "&:disabled": {
@@ -137,6 +144,7 @@ export const StyledButton = styled(motion.button)<
             }
           },
           "&:active": {
+            transform: "scale(0.9)",
             backgroundColor: primary.active
           },
           "&:disabled": {

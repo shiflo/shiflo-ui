@@ -20,7 +20,7 @@ export const Default: Story = {
     children: "BottomSheet",
     open: true,
     onClose: () => {},
-    transitionDuration: 0.3,
+    transitionDuration: 200,
     hideDragHandleBar: false,
     hideOverlay: false,
     maxWidth: "375px"
@@ -47,7 +47,7 @@ export const Performance: Story = {
     children: "BottomSheet",
     open: true,
     onClose: () => {},
-    transitionDuration: 0.3,
+    transitionDuration: 200,
     hideDragHandleBar: false,
     hideOverlay: false,
     maxWidth: "375px"
@@ -66,7 +66,7 @@ export const Performance: Story = {
         <BottomSheet {...args} open={isOpen} onClose={handleClose}>
           {args.children}
         </BottomSheet>
-        <FPSMonitor trigger={isOpen} duration={(args.transitionDuration ?? 0.3) * 1000} />
+        <FPSMonitor trigger={isOpen} duration={args.transitionDuration} />
       </>
     );
   }

@@ -1,8 +1,8 @@
-import type { ReactNode, PropsWithChildren } from "react";
+import type { ReactNode, ComponentPropsWithRef } from "react";
 
-import type { HTMLMotionProps } from "motion/react";
+import type { UtilityProps } from "@typings/utility";
 
-export interface SnackbarProps extends PropsWithChildren<HTMLMotionProps<"div">> {
+export interface SnackbarProps extends ComponentPropsWithRef<"div">, UtilityProps {
   open?: boolean;
   onClose?: () => void;
   transitionDuration?: number;

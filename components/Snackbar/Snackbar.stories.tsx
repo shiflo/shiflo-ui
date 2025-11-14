@@ -30,7 +30,7 @@ export const Default: Story = {
     children: "Snackbar",
     open: true,
     onClose: () => {},
-    transitionDuration: 0.3,
+    transitionDuration: 200,
     autoHideDuration: 3000,
     disableAutoHide: false,
     maxWidth: "375px"
@@ -62,7 +62,7 @@ export const WithStartIcon: Story = {
     children: "Snackbar",
     open: true,
     onClose: () => {},
-    transitionDuration: 0.3,
+    transitionDuration: 200,
     autoHideDuration: 3000,
     disableAutoHide: false
   },
@@ -93,7 +93,7 @@ export const WithAction: Story = {
     children: "Snackbar",
     open: true,
     onClose: () => {},
-    transitionDuration: 0.3,
+    transitionDuration: 200,
     autoHideDuration: 3000,
     disableAutoHide: false
   },
@@ -124,7 +124,7 @@ export const Performance: Story = {
     children: "Snackbar",
     open: true,
     onClose: () => {},
-    transitionDuration: 0.3,
+    transitionDuration: 200,
     autoHideDuration: 3000,
     disableAutoHide: false
   },
