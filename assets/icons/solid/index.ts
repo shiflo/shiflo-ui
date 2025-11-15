@@ -14,3 +14,7 @@ export { default as MinusSolid } from "./minus-solid.svg";
 export { default as BriefcaseBlankSolid } from "./briefcase-blank-solid.svg";
 export { default as ChartSimpleHorizontalSolid } from "./chart-simple-horizontal-solid.svg";
 export { default as ClockDeskSolid } from "./clock-desk-solid.svg";
+export { default as CircleCheckSolid } from "./circle-check-solid.svg";
+export { default as ArrowLeftSolid } from "./arrow-left-solid.svg";
+export { default as CircleInfoSolid } from "./circle-info-solid.svg";
+export { default as CircleExclamationSolid } from "./circle-exclamation-solid.svg";

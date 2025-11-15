@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
 import { useTheme } from "@emotion/react";
-import { motion, AnimatePresence } from "motion/react";
 
 import Box from "@components/Box";
 
@@ -101,10 +100,7 @@ function FPSMonitor({
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
+    <div
       style={{
         padding: spacing["600"],
         border: `1px solid ${border.light}`,
@@ -131,135 +127,113 @@ function FPSMonitor({
           FPS 모니터
         </Typography>
       </Box>
-      <AnimatePresence>
-        {metrics && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Box mb="600">
-              <Typography
-                variant="body1"
-                fontWeight={700}
-                mb="400"
-                style={{ color: getStatusColor() }}
-              >
-                상태: {getStatusText()}
-              </Typography>
-              <Box mb="500">
-                <Typography variant="small1" color="text.secondary" mb="300">
-                  현재 FPS: {metrics.fps.toFixed(1)}
-                </Typography>
-                <Box
-                  style={{
-                    height: "8px",
-                    backgroundColor: primary.alpha[10],
-                    borderRadius: radius["150"],
-                    overflow: "hidden",
-                    position: "relative"
-                  }}
-                >
-                  <motion.div
-                    style={{
-                      height: "100%",
-                      backgroundColor: getFPSBarColor(metrics.fps),
-                      borderRadius: radius["150"],
-                      position: "relative"
-                    }}
-                    initial={{ width: 0 }}
-                    animate={{ width: `${getFPSBarWidth(metrics.fps)}%` }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                  />
-                </Box>
-              </Box>
-              <Box
-                mb="600"
+      {metrics && (
+        <Box mb="600">
+          <Typography variant="body1" fontWeight={700} mb="400" style={{ color: getStatusColor() }}>
+            상태: {getStatusText()}
+          </Typography>
+          <Box mb="500">
+            <Typography variant="small1" color="text.secondary" mb="300">
+              현재 FPS: {metrics.fps.toFixed(1)}
+            </Typography>
+            <Box
+              style={{
+                height: "8px",
+                backgroundColor: primary.alpha[10],
+                borderRadius: radius["150"],
+                overflow: "hidden",
+                position: "relative"
+              }}
+            >
+              <div
                 style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: spacing["300"],
-                  backgroundColor: primary.alpha[5],
-                  padding: spacing["400"],
-                  borderRadius: radius["400"],
-                  border: `1px solid ${primary.alpha[20]}`
+                  height: "100%",
+                  width: `${getFPSBarWidth(metrics.fps)}%`,
+                  backgroundColor: getFPSBarColor(metrics.fps),
+                  borderRadius: radius["150"],
+                  position: "relative"
                 }}
-              >
-                <div>
-                  <Typography variant="small1" color="text.secondary">
-                    평균 FPS
-                  </Typography>
-                  <Typography variant="body1" fontWeight={700} color="text.primary">
-                    {metrics.averageFPS.toFixed(1)}
-                  </Typography>
-                </div>
-                <div>
-                  <Typography variant="small1" color="text.secondary">
-                    최소 FPS
-                  </Typography>
-                  <Typography variant="body1" fontWeight={700} color="text.primary">
-                    {metrics.minFPS.toFixed(1)}
-                  </Typography>
-                </div>
-                <div>
-                  <Typography variant="small1" color="text.secondary">
-                    최대 FPS
-                  </Typography>
-                  <Typography variant="body1" fontWeight={700} color="text.primary">
-                    {metrics.maxFPS.toFixed(1)}
-                  </Typography>
-                </div>
-                <div>
-                  <Typography variant="small1" color="text.secondary">
-                    프레임 수
-                  </Typography>
-                  <Typography variant="body1" fontWeight={700} color="text.primary">
-                    {metrics.frameCount}
-                  </Typography>
-                </div>
-                <div style={{ gridColumn: "1 / -1" }}>
-                  <Typography variant="small1" color="text.secondary">
-                    측정 시간
-                  </Typography>
-                  <Typography variant="body1" fontWeight={700} color="text.primary">
-                    {(metrics.duration / 1000).toFixed(1)}초
-                  </Typography>
-                </div>
-              </Box>
+              />
             </Box>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {is60FPS !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+          </Box>
+          <Box
+            mb="600"
             style={{
-              width: "100%",
-              marginTop: spacing["600"],
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: spacing["300"],
+              backgroundColor: primary.alpha[5],
               padding: spacing["400"],
-              backgroundColor: is60FPS ? primary.alpha[10] : feedback.error.light,
-              border: `1px solid ${is60FPS ? primary.main : feedback.error.main}`,
               borderRadius: radius["400"],
-              color: is60FPS ? primary.main : feedback.error.dark,
-              position: "relative",
-              overflow: "hidden"
+              border: `1px solid ${primary.alpha[20]}`
             }}
           >
-            <Typography variant="body1" fontWeight={700}>
-              {is60FPS ? "60프레임 달성!" : "60프레임 미달성"}
-            </Typography>
-            <Typography variant="small1" mt="200" style={{ opacity: 0.8 }}>
-              임계값: {threshold}fps
-            </Typography>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+            <div>
+              <Typography variant="small1" color="text.secondary">
+                평균 FPS
+              </Typography>
+              <Typography variant="body1" fontWeight={700} color="text.primary">
+                {metrics.averageFPS.toFixed(1)}
+              </Typography>
+            </div>
+            <div>
+              <Typography variant="small1" color="text.secondary">
+                최소 FPS
+              </Typography>
+              <Typography variant="body1" fontWeight={700} color="text.primary">
+                {metrics.minFPS.toFixed(1)}
+              </Typography>
+            </div>
+            <div>
+              <Typography variant="small1" color="text.secondary">
+                최대 FPS
+              </Typography>
+              <Typography variant="body1" fontWeight={700} color="text.primary">
+                {metrics.maxFPS.toFixed(1)}
+              </Typography>
+            </div>
+            <div>
+              <Typography variant="small1" color="text.secondary">
+                프레임 수
+              </Typography>
+              <Typography variant="body1" fontWeight={700} color="text.primary">
+                {metrics.frameCount}
+              </Typography>
+            </div>
+            <div style={{ gridColumn: "1 / -1" }}>
+              <Typography variant="small1" color="text.secondary">
+                측정 시간
+              </Typography>
+              <Typography variant="body1" fontWeight={700} color="text.primary">
+                {(metrics.duration / 1000).toFixed(1)}초
+              </Typography>
+            </div>
+          </Box>
+        </Box>
+      )}
+      {is60FPS !== null && (
+        <div
+          style={{
+            width: "100%",
+            marginTop: spacing["600"],
+            padding: spacing["400"],
+            backgroundColor: is60FPS ? primary.alpha[10] : feedback.error.light,
+            border: `1px solid ${is60FPS ? primary.main : feedback.error.main}`,
+            borderRadius: radius["400"],
+            color: is60FPS ? primary.main : feedback.error.dark,
+            position: "relative",
+            overflow: "hidden"
+          }}
+        >
+          <Typography variant="body1" fontWeight={700}>
+            {is60FPS ? "60프레임 달성!" : "60프레임 미달성"}
+          </Typography>
+          <Typography variant="small1" mt="200" style={{ opacity: 0.8 }}>
+            임계값: {threshold}fps
+          </Typography>
+        </div>
+      )}
+    </div>
   );
 }
 
