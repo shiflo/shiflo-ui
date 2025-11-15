@@ -18,3 +18,5 @@ export { default as CircleCheckSolid } from "./circle-check-solid.svg";
 export { default as ArrowLeftSolid } from "./arrow-left-solid.svg";
 export { default as CircleInfoSolid } from "./circle-info-solid.svg";
 export { default as CircleExclamationSolid } from "./circle-exclamation-solid.svg";
+export { default as CirclePlusSolid } from "./circle-plus-solid.svg";
+export { default as ChevronLeftSolid } from "./chevron-left-solid.svg";
