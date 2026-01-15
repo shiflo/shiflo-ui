@@ -9,4 +9,5 @@ export interface BottomSheetProps extends ComponentPropsWithRef<"div">, Pick<Uti
   maxWidth?: string;
   hideDragHandleBar?: boolean;
   hideOverlay?: boolean;
+  disablePortal?: boolean;
 }
