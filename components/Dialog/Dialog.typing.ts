@@ -7,4 +7,5 @@ export interface DialogProps extends ComponentPropsWithRef<"div">, Pick<UtilityP
   onClose?: () => void;
   transitionDuration?: number;
   maxWidth?: string;
+  disablePortal?: boolean;
 }

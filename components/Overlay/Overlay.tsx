@@ -15,6 +15,7 @@ function Overlay({
   style,
   ref,
   onClick,
+  disablePortal = true,
   ...props
 }: OverlayProps) {
   const [isUnmounted, setIsUnmounted] = useState(true);
@@ -69,6 +70,22 @@ function Overlay({
 
   if (isUnmounted) {
     return null;
+  }
+
+  if (disablePortal) {
+    return (
+      <OverlayWrapper>
+        <StyledOverlay
+          ref={overlayRef}
+          transitionDuration={transitionDuration}
+          ease={open ? "in" : "out"}
+          onClick={handleClick}
+          style={{ opacity: isOpen ? 1 : 0, ...style }}
+          {...props}
+        />
+        <OverlayContent placement={placement}>{children}</OverlayContent>
+      </OverlayWrapper>
+    );
   }
 
   return createPortal(

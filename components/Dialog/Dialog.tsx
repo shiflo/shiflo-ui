@@ -15,6 +15,7 @@ function Dialog({
   onClick,
   style,
   maxWidth = "375px",
+  disablePortal,
   ...props
 }: DialogProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,6 +55,7 @@ function Dialog({
       onClose={onClose}
       transitionDuration={transitionDuration}
       placement={"center-middle"}
+      disablePortal={disablePortal}
     >
       <StyledDialog
         ease={open ? "in" : "out"}

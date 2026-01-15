@@ -21,6 +21,7 @@ function BottomSheet({
   ref,
   hideDragHandleBar,
   hideOverlay,
+  disablePortal,
   style,
   ...props
 }: BottomSheetProps) {
@@ -189,6 +190,7 @@ function BottomSheet({
       onClose={onClose}
       transitionDuration={transitionDuration}
       placement={"center-bottom"}
+      disablePortal={disablePortal}
       css={
         !hideOverlay
           ? undefined
