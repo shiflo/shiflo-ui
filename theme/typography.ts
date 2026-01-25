@@ -11,18 +11,18 @@ const typography = {
   },
   heading3: {
     tag: "h3",
-    fontSize: "18px",
-    lineHeight: "24px"
+    fontSize: "20px",
+    lineHeight: "28px"
   },
   body1: {
     tag: "div",
     fontSize: "16px",
-    lineHeight: "20px"
+    lineHeight: "24px"
   },
   body2: {
     tag: "div",
     fontSize: "14px",
-    lineHeight: "18px"
+    lineHeight: "20px"
   },
   small1: {
     tag: "p",
@@ -31,8 +31,8 @@ const typography = {
   },
   small2: {
     tag: "p",
-    fontSize: "10.5px",
-    lineHeight: "14px"
+    fontSize: "10px",
+    lineHeight: "16px"
   },
   small3: {
     tag: "p",

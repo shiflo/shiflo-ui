@@ -14,7 +14,6 @@ export const StyledButton = styled.button<
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: ${({ theme: { spacing } }) => spacing["100"]};
   font-weight: 500;
   transition: all 0.2s;
   border: 1px solid transparent;
@@ -163,6 +162,7 @@ export const StyledButton = styled.button<
           borderRadius: radius["300"],
           fontSize: body1.fontSize,
           lineHeight: body1.lineHeight,
+          gap: spacing["200"],
           "& svg": {
             width: `calc(${body1.fontSize} + 4px)`,
             height: `calc(${body1.fontSize} + 4px)`
@@ -175,6 +175,7 @@ export const StyledButton = styled.button<
           borderRadius: radius["200"],
           fontSize: small1.fontSize,
           lineHeight: small1.lineHeight,
+          gap: spacing["100"],
           "& svg": {
             width: `calc(${small1.fontSize} + 4px)`,
             height: `calc(${small1.fontSize} + 4px)`
@@ -187,6 +188,7 @@ export const StyledButton = styled.button<
           borderRadius: radius["150"],
           fontSize: small2.fontSize,
           lineHeight: small2.lineHeight,
+          gap: spacing["100"],
           "& svg": {
             width: `calc(${small2.fontSize} + 4px)`,
             height: `calc(${small2.fontSize} + 4px)`
@@ -199,6 +201,7 @@ export const StyledButton = styled.button<
           borderRadius: radius["250"],
           fontSize: body2.fontSize,
           lineHeight: body2.lineHeight,
+          gap: spacing["150"],
           "& svg": {
             width: `calc(${body2.fontSize} + 4px)`,
             height: `calc(${body2.fontSize} + 4px)`
