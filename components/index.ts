@@ -2,7 +2,6 @@ import BottomSheet from "@components/BottomSheet";
 import Box from "@components/Box";
 import Button from "@components/Button";
 import Dialog from "@components/Dialog";
-import Icon from "@components/Icon";
 import Overlay from "@components/Overlay";
 import Snackbar from "@components/Snackbar";
 import Switch from "@components/Switch";
@@ -14,7 +13,6 @@ export * from "@components/BottomSheet";
 export * from "@components/Box";
 export * from "@components/Button";
 export * from "@components/Dialog";
-export * from "@components/Icon";
 export * from "@components/Overlay";
 export * from "@components/Snackbar";
 export * from "@components/Switch";
@@ -22,16 +20,4 @@ export * from "@components/Tag";
 export * from "@components/TextField";
 export * from "@components/Typography";
 
-export {
-  Button,
-  Box,
-  Typography,
-  TextField,
-  Overlay,
-  BottomSheet,
-  Dialog,
-  Icon,
-  Snackbar,
-  Switch,
-  Tag
-};
+export { Button, Box, Typography, TextField, Overlay, BottomSheet, Dialog, Snackbar, Switch, Tag };

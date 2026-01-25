@@ -7,7 +7,7 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import svgr from "vite-plugin-svgr";
 
-const inputs = ["assets", "components", "theme", "typings", "utils"];
+const inputs = ["components", "theme", "typings", "utils"];
 
 export default defineConfig({
   build: {
@@ -40,24 +40,19 @@ export default defineConfig({
     rollupOptions: {
       external: [
         /react/g,
-        /^react\/.*/,
+        /^react\/.*/g,
         /react-dom/g,
-        /react-dom\/.*/,
-        /@emotion\/.*/,
+        /react-dom\/.*/g,
+        /@emotion\/.*/g,
         /motion/g,
-        /motion\/.*/
+        /motion\/.*/g,
+        /lucide-react/g,
+        /lucide-react\/.*/g
       ],
       output: [
         {
           interop: "auto",
           format: "es",
-          manualChunks: (id) => {
-            if (id.includes("assets")) {
-              return id.slice(id.lastIndexOf("assets"), id.length);
-            }
-
-            return undefined;
-          },
           entryFileNames: "[name].mjs"
         }
       ]
