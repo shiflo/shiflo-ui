@@ -1,4 +1,4 @@
-import Icon from "@components/Icon";
+import { Calendar, Search } from "lucide-react";
 
 import TextField from "@components/TextField";
 
@@ -35,7 +35,7 @@ export const WithStartIcon: Story = {
   args: {
     variant: "outlined",
     size: "medium",
-    startIcon: <Icon name={"Grid2Solid"} />,
+    startIcon: <Search />,
     placeholder: "Placeholder",
     disabled: false,
     fullWidth: false
@@ -46,7 +46,7 @@ export const WithEndIcon: Story = {
   args: {
     variant: "outlined",
     size: "medium",
-    endIcon: <Icon name={"CalendarLine"} />,
+    endIcon: <Calendar />,
     placeholder: "Placeholder",
     disabled: false,
     fullWidth: false

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 
+import { Calendar } from "lucide-react";
+
 import Button from "@components/Button";
 import FPSMonitor from "@components/FPSMonitor";
-import Icon from "@components/Icon";
 
 import Snackbar from "@components/Snackbar";
 
@@ -76,12 +77,7 @@ export const WithStartIcon: Story = {
     }, [args.open]);
 
     return (
-      <Snackbar
-        {...args}
-        open={isOpen}
-        onClose={handleClose}
-        startIcon={<Icon name={"CalendarLine"} color={"common.surface"} width={24} height={24} />}
-      >
+      <Snackbar {...args} open={isOpen} onClose={handleClose} startIcon={<Calendar />}>
         {args.children}
       </Snackbar>
     );

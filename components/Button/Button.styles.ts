@@ -164,8 +164,8 @@ export const StyledButton = styled.button<
           fontSize: body1.fontSize,
           lineHeight: body1.lineHeight,
           "& svg": {
-            width: body1.fontSize,
-            height: body1.fontSize
+            width: `calc(${body1.fontSize} + 4px)`,
+            height: `calc(${body1.fontSize} + 4px)`
           }
         });
         break;
@@ -176,8 +176,8 @@ export const StyledButton = styled.button<
           fontSize: small1.fontSize,
           lineHeight: small1.lineHeight,
           "& svg": {
-            width: small1.fontSize,
-            height: small1.fontSize
+            width: `calc(${small1.fontSize} + 4px)`,
+            height: `calc(${small1.fontSize} + 4px)`
           }
         });
         break;
@@ -188,8 +188,8 @@ export const StyledButton = styled.button<
           fontSize: small2.fontSize,
           lineHeight: small2.lineHeight,
           "& svg": {
-            width: small2.fontSize,
-            height: small2.fontSize
+            width: `calc(${small2.fontSize} + 4px)`,
+            height: `calc(${small2.fontSize} + 4px)`
           }
         });
         break;
@@ -200,8 +200,8 @@ export const StyledButton = styled.button<
           fontSize: body2.fontSize,
           lineHeight: body2.lineHeight,
           "& svg": {
-            width: body2.fontSize,
-            height: body2.fontSize
+            width: `calc(${body2.fontSize} + 4px)`,
+            height: `calc(${body2.fontSize} + 4px)`
           }
         });
         break;

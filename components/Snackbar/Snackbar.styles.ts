@@ -35,6 +35,11 @@ export const StyledSnackbar = styled.div<
 
 export const StartAdornment = styled.div`
   white-space: nowrap;
+  color: ${({
+    theme: {
+      palette: { common }
+    }
+  }) => common.surface};
 `;
 
 export const Content = styled.div`

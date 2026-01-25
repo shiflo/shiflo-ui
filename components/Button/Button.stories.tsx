@@ -1,5 +1,6 @@
+import { Calendar } from "lucide-react";
+
 import Button from "@components/Button";
-import Icon from "@components/Icon";
 
 import type { ButtonProps } from "@components/Button";
 
@@ -49,7 +50,7 @@ export const WithStartIcon: Story = {
     size: "medium",
     color: "primary",
     disabled: false,
-    startIcon: <Icon name={"CalendarsSolid"} />
+    startIcon: <Calendar />
   }
 };
 
@@ -60,7 +61,7 @@ export const WithEndIcon: Story = {
     size: "medium",
     color: "primary",
     disabled: false,
-    endIcon: <Icon name={"CalendarsSolid"} />
+    endIcon: <Calendar />
   }
 };
 
@@ -70,6 +71,6 @@ export const IconOnly: Story = {
     size: "medium",
     color: "primary",
     disabled: false,
-    startIcon: <Icon name={"CalendarsSolid"} />
+    startIcon: <Calendar />
   }
 };
