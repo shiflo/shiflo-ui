@@ -8,7 +8,7 @@ export const StyledTag = styled.span<Pick<TagProps, "color" | "textColor">>`
   transition: all 0.2s;
   cursor: default;
 
-  padding: ${({ theme: { spacing } }) => spacing["100"]};
+  padding: ${({ theme: { spacing } }) => `${spacing["150"]} ${spacing["200"]}`};
   border-radius: ${({ theme: { radius } }) => radius["200"]};
 
   ${({ theme: { palette }, color, textColor }) => {
