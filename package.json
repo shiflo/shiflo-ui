@@ -17,6 +17,13 @@
     },
     "./theme/typing": {
       "types": "./dist/theme/typing.d.ts"
+    },
+    "./utils/getValueByPath": {
+      "import": "./dist/utils/getValueByPath.mjs",
+      "types": "./dist/utils/getValueByPath.d.ts"
+    },
+    "./typings/utility": {
+      "types": "./dist/typings/utility.d.ts"
     }
   },
   "sideEffects": false,

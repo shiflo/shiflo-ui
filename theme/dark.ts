@@ -68,9 +68,9 @@ const dark: ShifloTheme = {
         dark: "#CCB77A"
       },
       error: {
-        light: "#7F1D1D",
-        main: "#EF4444",
-        dark: "#C53030"
+        light: "#5C3535",
+        main: "#E07B7B",
+        dark: "#C76B6B"
       },
       info: {
         light: "#446E9E",
